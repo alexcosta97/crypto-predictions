@@ -1,0 +1,15 @@
+\select@language {british}
+\contentsline {part}{A\hspace {1em}Research}{2}
+\contentsline {chapter}{\numberline {1}Technology - Wider Context}{3}
+\contentsline {chapter}{\numberline {2}Web Services Technology}{4}
+\contentsline {chapter}{\numberline {3}REST as an alternative to Web Services}{5}
+\contentsline {chapter}{\numberline {4}Examples of Web Services}{6}
+\contentsline {part}{B\hspace {1em}Project Report}{7}
+\contentsline {chapter}{\numberline {5}Project Proposal}{8}
+\contentsline {chapter}{\numberline {6}Engineering Approach}{9}
+\contentsline {chapter}{\numberline {7}Project Management}{10}
+\contentsline {chapter}{\numberline {8}Development}{11}
+\contentsline {section}{\numberline {A}Requirements}{11}
+\contentsline {section}{\numberline {B}Design}{11}
+\contentsline {section}{\numberline {C}Implementation}{11}
+\contentsline {section}{\numberline {D}Testing}{11}
