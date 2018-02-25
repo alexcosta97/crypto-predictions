@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.1.31)  22 FEB 2018 17:18
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.1.31)  25 FEB 2018 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,8 +601,7 @@ Package: titlesec 2016/03/15 v2.10.1 Sectioning titles
 \titlewidth=\dimen173
 \titlewidthlast=\dimen174
 \titlewidthfirst=\dimen175
-)
-No file main.aux.
+) (.pdf/main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
@@ -747,12 +746,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 70.
 [1
 
-]
-No file main.toc.
+] (.pdf/main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+)
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
-[1] [2
+ [1] [2
 
 ] (./research/technology.tex
 Chapter 1.
@@ -791,11 +794,11 @@ Chapter 8.
 
 ] (.pdf/main.aux) ) 
 Here is how much of TeX's memory you used:
- 15555 strings out of 493638
- 302664 string characters out of 6146796
- 310099 words of memory out of 5000000
- 18803 multiletter control sequences out of 15000+600000
- 7121 words of font info for 52 fonts, out of 8000000 for 9000
+ 15567 strings out of 493638
+ 303097 string characters out of 6146796
+ 312099 words of memory out of 5000000
+ 18808 multiletter control sequences out of 15000+600000
+ 7259 words of font info for 55 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  36i,6n,61p,10416b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 
