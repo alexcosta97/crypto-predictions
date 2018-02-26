@@ -27,8 +27,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `Exchanges` (
-  `ExchangeID` int(11) NOT NULL,
-  `ExchangeName` varchar(50) NOT NULL
+  `ExchangeID` int(11) NOT NULL AUTO_INCREMENT,
+  `ExchangeName` varchar(50) NOT NULL,
+  Primary Key (`ExchangeID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -38,12 +39,15 @@ CREATE TABLE IF NOT EXISTS `Exchanges` (
 --
 
 CREATE TABLE IF NOT EXISTS `Stats` (
-  `StatID` int(11) NOT NULL,
+  `StatID` int(11) NOT NULL AUTO_INCREMENT,
   `StartDate` datetime DEFAULT NULL,
   `EndDate` datetime DEFAULT NULL,
   `ExchangeID` int(11) NOT NULL,
   `HighestLatestDiff` double NOT NULL,
   `AvgDiff` double NOT NULL,
   `AvgGrowthTime` bigint(20) NOT NULL,
-  `AvgDeclineTime` bigint(20) NOT NULL
+  `AvgDeclineTime` bigint(20) NOT NULL,
+  PRIMARY KEY (`StatID`),
+  Key 'ExchangeID' (`ExchangeID`),
+  CONSTRAINT `FKExchange` FOREIGN KEY (`ExchangeID`) REFERENCES `Exchanges` (`ExchangeID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

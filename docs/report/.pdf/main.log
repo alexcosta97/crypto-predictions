@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.1.31)  26 FEB 2018 18:23
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.1.31)  26 FEB 2018 21:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -951,7 +951,9 @@ Chapter 4.
 Chapter 5.
 [8
 
-]) (./report/engineeringApproach.tex [9]
+]
+File: .img/dbschema.png Graphic file (type QTm)
+ <use  ".img/dbschema.png" >) (./report/engineeringApproach.tex [9]
 Chapter 6.
 ) (./report/projectManagement.tex [10
 
@@ -974,10 +976,10 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 95.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 22745 strings out of 493638
- 405718 string characters out of 6146796
+ 22751 strings out of 493638
+ 405769 string characters out of 6146796
  433574 words of memory out of 5000000
- 25927 multiletter control sequences out of 15000+600000
+ 25928 multiletter control sequences out of 15000+600000
  7619 words of font info for 56 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  36i,6n,61p,10416b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
