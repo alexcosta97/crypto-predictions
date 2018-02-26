@@ -8,6 +8,15 @@
           "--interaction=nonstopmode",
           "%DOC%.tex"
         ]
+      },
+      {
+        "command": "xelatex",
+        "args": [
+          "--output-directory=.pdf",
+          "--synctex-number=2",
+          "--interaction=nonstopmode",
+          "%DOC%.tex"
+        ]
       }
     ],
     "latex-workshop.latex.clean.enabled": false,

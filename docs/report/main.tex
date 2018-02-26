@@ -1,5 +1,5 @@
 % !TeX program = xelatex
-\documentclass{report}
+\documentclass[hidelinks]{report}
     % General
     \usepackage[british]{babel}
     \let\latinencoding\relax
@@ -65,7 +65,13 @@
         \vspace*{.75cm}\textit{Computing \& Web Development}\\
         Buckinghamshire New University
     }
+    \usepackage{xcolor}
     \usepackage{hyperref}
+    \hypersetup{
+        colorlinks,
+        linkcolor={black},
+        urlcolor={blue}
+    }
 
     \begin{document}
     
