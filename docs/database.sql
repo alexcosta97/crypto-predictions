@@ -1,10 +1,10 @@
-CREATE TABLE dbo.Exchanges(
+CREATE TABLE Exchanges(
     ExchangeID INT IDENTITY(1,1) NOT NULL,
     ExchangeName VARCHAR(50) NOT NULL,
     CONSTRAINT PK_Exchange PRIMARY KEY (ExchangeID)
 );
 
-CREATE TABLE dbo.Stats(
+CREATE TABLE Stats(
     StatID INT Identity(1,1) not null,
     StartDate DateTime,
     EndDate DateTime,
