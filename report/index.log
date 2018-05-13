@@ -1,0 +1,253 @@
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.1.31)  13 MAY 2018 15:12
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/coaxial/Documents/crypto-predictions/report/index
+(/home/coaxial/Documents/crypto-predictions/report/index.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(./bnu.cls
+Document Class: bnu 2018/03/02 Extended standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/02/24 3.9q The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/02/24 3.9q Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/xebabel.def))
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count89
+\Gm@cntv=\count90
+\c@Gm@tempcnt=\count91
+\Gm@bindingoffset=\dimen104
+\Gm@wd@mp=\dimen105
+\Gm@odd@mp=\dimen106
+\Gm@even@mp=\dimen107
+\Gm@layoutwidth=\dimen108
+\Gm@layoutheight=\dimen109
+\Gm@layouthoffset=\dimen110
+\Gm@layoutvoffset=\dimen111
+\Gm@dimlist=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.sty
+Package: subfiles 2012/05/23 Federico Garcia
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks16
+\verbatim@line=\toks17
+\verbatim@in@stream=\read1
+))
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip43
+\enit@outerparindent=\dimen112
+\enit@toks=\toks18
+\enit@inbox=\box26
+\enitdp@description=\count92
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datetime2/datetime2.sty
+Package: datetime2 2016/02/11 v1.4 (NLCT) date and time formats
+
+(/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2015/03/23 v1.2 (NLCT) Track Languages
+
+(/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count93
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks19
+\XKV@tempa@toks=\toks20
+)
+\XKV@depth=\count94
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/datetime2-english/datetime2-en-GB.ldf
+File: datetime2-en-GB.ldf 2016/03/09 v1.04 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/datetime2-english/datetime2-english-ba
+se.ldf
+File: datetime2-english-base.ldf 2016/03/09 v1.04 (NLCT)
+))) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip44
+\bibsep=\skip45
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count95
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
+
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count96
+\float@exts=\toks21
+\float@box=\box27
+\@float@everytoks=\toks22
+\@floatcapt=\box28
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: xetex.def on input line 95.
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2015/09/11 v4.06 LaTeX color/graphics driver for XeTeX (TeX Liv
+e/RRM/JK)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 44.
+\cftparskip=\skip46
+\cftbeforetoctitleskip=\skip47
+\cftaftertoctitleskip=\skip48
+\cftbeforepartskip=\skip49
+\cftpartnumwidth=\skip50
+\cftpartindent=\skip51
+\cftbeforechapskip=\skip52
+\cftchapindent=\skip53
+\cftchapnumwidth=\skip54
+\cftbeforesecskip=\skip55
+\cftsecindent=\skip56
+\cftsecnumwidth=\skip57
+\cftbeforesubsecskip=\skip58
+\cftsubsecindent=\skip59
+\cftsubsecnumwidth=\skip60
+\cftbeforesubsubsecskip=\skip61
+\cftsubsubsecindent=\skip62
+\cftsubsubsecnumwidth=\skip63
+\cftbeforeparaskip=\skip64
+\cftparaindent=\skip65
+\cftparanumwidth=\skip66
+\cftbeforesubparaskip=\skip67
+\cftsubparaindent=\skip68
+\cftsubparanumwidth=\skip69
+\cftbeforeloftitleskip=\skip70
+\cftafterloftitleskip=\skip71
+\cftbeforefigskip=\skip72
+\cftfigindent=\skip73
+\cftfignumwidth=\skip74
+\c@lofdepth=\count97
+\c@lotdepth=\count98
+\cftbeforelottitleskip=\skip75
+\cftafterlottitleskip=\skip76
+\cftbeforetabskip=\skip77
+\cfttabindent=\skip78
+\cfttabnumwidth=\skip79
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/15 v2.10.1 Sectioning titles
+\ttl@box=\box29
+\beforetitleunit=\skip80
+\aftertitleunit=\skip81
+\ttl@plus=\dimen115
+\ttl@minus=\dimen116
+\ttl@toksa=\toks23
+\titlewidth=\dimen117
+\titlewidthlast=\dimen118
+\titlewidthfirst=\dimen119
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+
+! LaTeX Error: File `noto.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+./bnu.cls:39: Emergency stop.
+<read *> 
+         
+l.39 \RequirePackage
+                    {sourcecodepro}^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 4540 strings out of 493638
+ 65091 string characters out of 6146796
+ 158089 words of memory out of 5000000
+ 7904 multiletter control sequences out of 15000+600000
+ 4403 words of font info for 15 fonts, out of 8000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 39i,0n,38p,903b,37s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.
