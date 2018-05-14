@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+
 namespace CryptoStats.Models
 {
     public class Exchange
@@ -7,6 +8,9 @@ namespace CryptoStats.Models
         public int ExchangeId {get;set;}
         public string name {get;set;}
 
-        public List<Stats> stats {get;set;}
+        //Set List to establish foreign key
+        public List<Stat> Stats {get;set;}
+        
     }
+
 }

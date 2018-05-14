@@ -2,12 +2,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CryptoStats.Models
 {
-    public class CryptoStatsContext : DbContext
+    public class CryptoContext : DbContext
     {
-        public CryptoStatsContext(DbContextOptions<CryptoStatsContext> options) : base(options)
-        {}
+        public CryptoContext(DbContextOptions<CryptoContext> options) : base(options)
+        {            
+        }
 
-        public DbSet<Exchange> Exchanges{get;set;}
-        public DbSet<Stats> Stats{get;set;}
+        //Add DbSets to DbContext to store and retrieve tables from/to the Database
+        public DbSet<Exchange> Exchanges {get;set;}
+        public DbSet<Stat> Stats {get;set;}
     }
 }
