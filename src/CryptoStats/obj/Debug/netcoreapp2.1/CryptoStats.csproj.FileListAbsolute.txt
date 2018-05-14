@@ -1,0 +1,14 @@
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/obj/Debug/netcoreapp2.1/CryptoStats.csprojAssemblyReference.cache
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/obj/Debug/netcoreapp2.1/CryptoStats.csproj.CoreCompileInputs.cache
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/obj/Debug/netcoreapp2.1/CryptoStats.RazorAssemblyInfo.cache
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/obj/Debug/netcoreapp2.1/CryptoStats.RazorAssemblyInfo.cs
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/obj/Debug/netcoreapp2.1/CryptoStats.AssemblyInfoInputs.cache
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/obj/Debug/netcoreapp2.1/CryptoStats.AssemblyInfo.cs
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/bin/Debug/netcoreapp2.1/CryptoStats.deps.json
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/bin/Debug/netcoreapp2.1/CryptoStats.runtimeconfig.json
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/bin/Debug/netcoreapp2.1/CryptoStats.runtimeconfig.dev.json
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/bin/Debug/netcoreapp2.1/CryptoStats.dll
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/bin/Debug/netcoreapp2.1/CryptoStats.pdb
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/obj/Debug/netcoreapp2.1/CryptoStats.RazorTargetAssemblyInfo.cache
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/obj/Debug/netcoreapp2.1/CryptoStats.dll
+/home/coaxial/Documents/crypto-predictions/src/CryptoStats/obj/Debug/netcoreapp2.1/CryptoStats.pdb
