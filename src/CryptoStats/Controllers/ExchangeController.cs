@@ -8,11 +8,11 @@ namespace CryptoStats.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CryptoController : ControllerBase
+    public class ExchangeController : ControllerBase
     {
         private readonly CryptoContext _context;
 
-        public CryptoController(CryptoContext context)
+        public ExchangeController(CryptoContext context)
         {
             _context = context;
 
@@ -22,11 +22,23 @@ namespace CryptoStats.Controllers
                 _context.Exchanges.Add(new Exchange {Name = "Exchange1"});
                 _context.SaveChangesAsync();
             }
-            if(_context.Stats.Count() == 0)
+        }
+
+        [HttpGet]
+        public ActionResult<List<Exchange>> GetAll()
+        {
+            return _context.Exchanges.ToList();
+        }
+
+        [HttpGet("{id}", Name="GetExchange")]
+        public ActionResult<Exchange> GetById(int id)
+        {
+            var item = _context.Exchanges.Find(id);
+            if(item == null)
             {
-                _context.Stats.Add(new Stat {startDate = DateTime.Now, endDate = DateTime.Now, HighestLatestDiff = 0.00, avgDiff = 0.00, avgGrowthTime = 0, avgDeclineTime = 0});
-                _context.SaveChangesAsync();
+                return NotFound();
             }
+            return item;
         }
     }
 }
