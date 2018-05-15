@@ -8,11 +8,11 @@ namespace CryptoStats.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ExchangeController : ControllerBase
+    public class ExchangesController : ControllerBase
     {
         private readonly CryptoContext _context;
 
-        public ExchangeController(CryptoContext context)
+        public ExchangesController(CryptoContext context)
         {
             _context = context;
 
