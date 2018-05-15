@@ -247,5 +247,46 @@ namespace CryptoStats.Controllers
         }
         
         [HttpGet("/avgdecline")]
+        public ActionResult<long> GetAvgDeclineByStartDate([FromBody] DateTime startDate)
+        {
+            var items = _context.Stats.Where(s => s.startDate == startDate).ToList();
+            if(items == null)
+            {
+                return NotFound();
+            }
+            long times = 0;
+            foreach(Stat s in items)
+            {
+                times += s.avgDeclineTime;
+            }
+            return times / items.Count();
+        }
+
+        [HttpGet("/avgdecline")]
+        public ActionResult<long> GetAvgDeclineByEndDate([FromBody] DateTime endDate)
+        {
+            var items = _context.Stats.Where(s => s.endDate == endDate).ToList();
+            if(items == null)
+            {
+                return NotFound();
+            }
+            long times = 0;
+            foreach(Stat s in items)
+            {
+                times += s.avgDeclineTime;
+            }
+            return times / items.Count();
+        }
+
+        [HttpGet("/avgdecline")]
+        public ActionResult<long> GetAvgDeclineByDates([FromBody] DateTime startDate, [FromBody] DateTime endDate)
+        {
+            var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
+            if(item == null)
+            {
+                return NotFound();
+            }
+            return item.avgDeclineTime;
+        }
     }
 }
