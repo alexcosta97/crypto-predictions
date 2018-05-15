@@ -44,7 +44,7 @@ namespace CryptoStats.Controllers
 
         //Action to get all the stats with a specific start date
         [HttpGet]
-        public ActionResult<List<Stat>> GetByStartDate([FromBody] DateTime startDate)
+        public ActionResult<List<Stat>> GetByStartDate([FromQuery] DateTime startDate)
         {
             var items = _context.Stats.Where(s => s.startDate == startDate).ToList();
             if(items == null)
@@ -56,7 +56,7 @@ namespace CryptoStats.Controllers
 
         //Action to get all the stats with a specific end date
         [HttpGet]
-        public ActionResult<List<Stat>> GetByEndDate([FromBody] DateTime endDate)
+        public ActionResult<List<Stat>> GetByEndDate([FromQuery] DateTime endDate)
         {
             var items = _context.Stats.Where(s => s.endDate == endDate).ToList();
             if(items == null)
@@ -67,7 +67,7 @@ namespace CryptoStats.Controllers
         }
 
         [HttpGet]
-        public ActionResult<Stat> GetByDates([FromBody] DateTime startDate, [FromBody] DateTime endDate)
+        public ActionResult<Stat> GetByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
             if(item == null)
@@ -91,7 +91,7 @@ namespace CryptoStats.Controllers
         }
 
         [HttpGet("/highestlatest")]
-        public ActionResult<double> GetHighestLatestByEndDate([FromBody] DateTime endDate)
+        public ActionResult<double> GetHighestLatestByEndDate([FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.endDate == endDate).Last();
             if(item == null)
@@ -102,7 +102,7 @@ namespace CryptoStats.Controllers
         }
 
         [HttpGet("/highestlatest")]
-        public ActionResult<double> GetHighestLatestByDates([FromBody] DateTime startDate, [FromBody] DateTime endDate)
+        public ActionResult<double> GetHighestLatestByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
             if(item == null)
@@ -130,7 +130,7 @@ namespace CryptoStats.Controllers
         //start date onwards are put on a list and the overall avg is
         //calculated
         [HttpGet("/avgdiff")]
-        public ActionResult<double> GetAvgDiffByStartDate([FromBody] DateTime startDate)
+        public ActionResult<double> GetAvgDiffByStartDate([FromQuery] DateTime startDate)
         {
             var items = _context.Stats.Where(s => s.startDate == startDate).ToList();
             if(items == null)
@@ -148,7 +148,7 @@ namespace CryptoStats.Controllers
 
         //To get the avgDiff from endDate, the same procedure as for from startDate is applied: avg of avgs
         [HttpGet("/avgdiff")]
-        public ActionResult<double> GetAvgDiffByEndDate([FromBody] DateTime endDate)
+        public ActionResult<double> GetAvgDiffByEndDate([FromQuery] DateTime endDate)
         {
             var items = _context.Stats.Where(s => s.endDate == endDate).ToList();
             if(items == null)
@@ -166,7 +166,7 @@ namespace CryptoStats.Controllers
 
         //The same procedure is applied for an id search is applied when looking for the avgDiff with a start and end dates
         [HttpGet("/avgdiff")]
-        public ActionResult<double> GetAvgDiffByDates([FromBody] DateTime startDate, [FromBody] DateTime endDate)
+        public ActionResult<double> GetAvgDiffByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
             if(item == null)
@@ -191,7 +191,7 @@ namespace CryptoStats.Controllers
 
         //To get the avgGrowthTime for a start or end date, the same procedure as for the avgDiff is applied, meaning doing an avg of avgs
         [HttpGet("/avggrowth")]
-        public ActionResult<long> GetAvgGrowthByStartDate([FromBody] DateTime startDate)
+        public ActionResult<long> GetAvgGrowthByStartDate([FromQuery] DateTime startDate)
         {
             var items = _context.Stats.Where(s => s.startDate == startDate).ToList();
             if(items == null)
@@ -207,7 +207,7 @@ namespace CryptoStats.Controllers
         }
 
         [HttpGet("/avggrowth")]
-        public ActionResult<long> GetAvgGrowthByEndDate([FromBody] DateTime endDate)
+        public ActionResult<long> GetAvgGrowthByEndDate([FromQuery] DateTime endDate)
         {
             var items = _context.Stats.Where(s => s.endDate == endDate).ToList();
             if(items == null)
@@ -223,7 +223,7 @@ namespace CryptoStats.Controllers
         }
 
         [HttpGet("/avggrowth")]
-        public ActionResult<long> GetAvgGrowthByDates([FromBody] DateTime startDate, [FromBody] DateTime endDate)
+        public ActionResult<long> GetAvgGrowthByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
             if(item == null)
@@ -247,7 +247,7 @@ namespace CryptoStats.Controllers
         }
         
         [HttpGet("/avgdecline")]
-        public ActionResult<long> GetAvgDeclineByStartDate([FromBody] DateTime startDate)
+        public ActionResult<long> GetAvgDeclineByStartDate([FromQuery] DateTime startDate)
         {
             var items = _context.Stats.Where(s => s.startDate == startDate).ToList();
             if(items == null)
@@ -263,7 +263,7 @@ namespace CryptoStats.Controllers
         }
 
         [HttpGet("/avgdecline")]
-        public ActionResult<long> GetAvgDeclineByEndDate([FromBody] DateTime endDate)
+        public ActionResult<long> GetAvgDeclineByEndDate([FromQuery] DateTime endDate)
         {
             var items = _context.Stats.Where(s => s.endDate == endDate).ToList();
             if(items == null)
@@ -279,7 +279,7 @@ namespace CryptoStats.Controllers
         }
 
         [HttpGet("/avgdecline")]
-        public ActionResult<long> GetAvgDeclineByDates([FromBody] DateTime startDate, [FromBody] DateTime endDate)
+        public ActionResult<long> GetAvgDeclineByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
             if(item == null)
