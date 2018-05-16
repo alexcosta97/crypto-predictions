@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.1.31)  13 MAY 2018 15:12
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.1.31)  16 MAY 2018 18:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -245,7 +245,7 @@ l.39 \RequirePackage
 Here is how much of TeX's memory you used:
  4540 strings out of 493638
  65091 string characters out of 6146796
- 158089 words of memory out of 5000000
+ 158088 words of memory out of 5000000
  7904 multiletter control sequences out of 15000+600000
  4403 words of font info for 15 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
