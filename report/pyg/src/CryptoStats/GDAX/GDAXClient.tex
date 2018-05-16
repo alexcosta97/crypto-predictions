@@ -109,12 +109,12 @@
 \PY{p}{\PYZob{}}
     \PY{k}{public} \PY{k}{class} \PY{n+nc}{GDAXClient}
     \PY{p}{\PYZob{}}
-        \PY{k}{public} \PY{n+nf}{GDAXClient}\PY{p}{(}\PY{k+kt}{bool} \PY{n}{sandBox} \PY{p}{=} \PY{k}{false}\PY{p}{)} \PY{p}{:} \PY{k}{this}\PY{p}{(}\PY{k}{new} \PY{n}{HttpClient}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sandBox}\PY{p}{)}\PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+        \PY{k}{public} \PY{n+nf}{GDAXClient}\PY{p}{(}\PY{k+kt}{bool} \PY{n}{sandBox} \PY{p}{=} \PY{k}{false}\PY{p}{)} \PY{p}{:} \PY{k}{this}\PY{p}{(} \PY{k}{new} \PY{n}{HttpClient}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sandBox}\PY{p}{)}\PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
 
         \PY{k}{public} \PY{n+nf}{GDAXClient}\PY{p}{(}\PY{n}{IHttpClient} \PY{n}{httpClient}\PY{p}{,} \PY{k+kt}{bool} \PY{n}{sandBox} \PY{p}{=} \PY{k}{false}\PY{p}{)}
         \PY{p}{\PYZob{}}
             \PY{k+kt}{var} \PY{n}{clock} \PY{p}{=} \PY{k}{new} \PY{n}{Clock}\PY{p}{(}\PY{p}{)}\PY{p}{;}
-            \PY{k+kt}{var} \PY{n}{httpRequestMessageService} \PY{p}{=} \PY{k}{new} \PY{n}{HttpRequestMessageService}\PY{p}{(}\PY{n}{sandBox}\PY{p}{)}\PY{p}{;}
+            \PY{k+kt}{var} \PY{n}{httpRequestMessageService} \PY{p}{=} \PY{k}{new} \PY{n}{HttpRequestMessageService}\PY{p}{(}\PY{n}{clock}\PY{p}{,} \PY{n}{sandBox}\PY{p}{)}\PY{p}{;}
             \PY{k+kt}{var} \PY{n}{queryBuilder} \PY{p}{=} \PY{k}{new} \PY{n}{QueryBuilder}\PY{p}{(}\PY{p}{)}\PY{p}{;}
             
             \PY{n}{ProductsService} \PY{p}{=} \PY{k}{new} \PY{n}{ProductsService}\PY{p}{(}\PY{n}{httpClient}\PY{p}{,} \PY{n}{httpRequestMessageService}\PY{p}{,} \PY{n}{queryBuilder}\PY{p}{)}\PY{p}{;}

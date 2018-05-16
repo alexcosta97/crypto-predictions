@@ -22,15 +22,14 @@ namespace CryptoStats.Models
                     return;
                 }
                 
-                if(!context.Exchanges.Any())
+                if(context.Exchanges.Any() == false)
                 {
-                    List<Exchange> exchanges = new List<Exchange>();
                     var products = client.ProductsService.GetAllProductsAsync().Result;
                     foreach(Product prod in products)
                     {
-                        exchanges.Add(new Exchange(){Name = prod.Id.ToString()});
+                        Console.Write(prod.Id.ToString());
+                        context.Exchanges.Add(new Exchange(){Name = prod.Id.ToString()});
                     }
-                    context.Exchanges.AddRange(exchanges);
                     context.SaveChanges();
                 }
 
@@ -51,13 +50,16 @@ namespace CryptoStats.Models
             {
                 foreach(Product p in client.ProductsService.GetAllProductsAsync().Result)
                 {
+                    System.Threading.Thread.Sleep(3000);
                     if(p.Id.ToString().Equals(context.Exchanges.Find(exchangeID).Name))
                     {
                         TimeSpan t = endDate.Subtract(startDate);
                         int days = (int)t.TotalDays;
                             for(int i = 0; i < days; i++)
                                 {
+                                    System.Threading.Thread.Sleep(3000);
                                     var candles = client.ProductsService.GetHistoricRatesAsync(p.Id, startDate, endDate, CandleGranularity.Minutes1).Result;
+                                    System.Threading.Thread.Sleep(1000);
                                     Stat adder = new Stat(){
                                         startDate = candles.First().Time,
                                         endDate = candles.Last().Time  
@@ -79,7 +81,7 @@ namespace CryptoStats.Models
                                     decimal candlesDiff = 0.00M;
                                     foreach(Candle c in  candles)
                                     {
-                                        candlesDiff += (decimal)(c.Close - c.Open);
+                                        candlesDiff += Convert.ToDecimal(c.Close - c.Open);
                                     }
                                     adder.avgDiff = candlesDiff / candles.Count();
                                     
@@ -89,7 +91,7 @@ namespace CryptoStats.Models
                                     //average is calculated afterwards
                                     List<TimeSpan> growthTimes = new List<TimeSpan>();
                                     List<TimeSpan> declineTimes = new List<TimeSpan>();
-                                    bool inGrowth = false;
+                                    bool? inGrowth = null;
                                     List<Candle> growthCandles = new List<Candle>();
 
                                     foreach(Candle c in candles)
@@ -101,9 +103,10 @@ namespace CryptoStats.Models
                                             growthCandles.Clear();
                                             growthCandles.Add(c);
                                         }
-                                        else if(c.Close > c.Open && inGrowth == true)
+                                        else if((c.Close > c.Open && inGrowth == true) || (c.Close > c.Open && inGrowth == null))
                                         {
                                             growthCandles.Add(c);
+                                            inGrowth = true;
                                         }
                                         else if(c.Close < c.Open && inGrowth == true)
                                         {
@@ -112,16 +115,17 @@ namespace CryptoStats.Models
                                             growthCandles.Clear();
                                             growthCandles.Add(c);
                                         }
-                                        else if(c.Close < c.Open && inGrowth == false)
+                                        else if((c.Close < c.Open && inGrowth == false) || (c.Close < c.Open && inGrowth == null))
                                         {
                                             growthCandles.Add(c);
+                                            inGrowth = false;
                                         }
                                     }
-                                    if(inGrowth)
+                                    if(inGrowth == true)
                                     {
                                         growthTimes.Add(growthCandles.Last().Time.Subtract(growthCandles.First().Time));
                                     }
-                                    else
+                                    else if (inGrowth == false)
                                     {
                                         declineTimes.Add(growthCandles.Last().Time.Subtract(growthCandles.First().Time));
                                     }
@@ -146,7 +150,9 @@ namespace CryptoStats.Models
                                 startDate.AddDays(-days);
                                 for(int i = 0; i < days; i++)
                                 {
+                                    System.Threading.Thread.Sleep(1000);
                                     var candles = client.ProductsService.GetHistoricRatesAsync(p.Id, startDate, endDate, CandleGranularity.Minutes1).Result;
+                                    System.Threading.Thread.Sleep(1000);
                                     Stat adder = new Stat(){
                                         startDate = candles.First().Time,
                                         endDate = candles.Last().Time  

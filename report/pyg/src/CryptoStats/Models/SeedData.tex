@@ -122,15 +122,14 @@
                     \PY{k}{return}\PY{p}{;}
                 \PY{p}{\PYZcb{}}
                 
-                \PY{k}{if}\PY{p}{(}\PY{p}{!}\PY{n}{context}\PY{p}{.}\PY{n}{Exchanges}\PY{p}{.}\PY{n}{Any}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+                \PY{k}{if}\PY{p}{(}\PY{n}{context}\PY{p}{.}\PY{n}{Exchanges}\PY{p}{.}\PY{n}{Any}\PY{p}{(}\PY{p}{)} \PY{p}{=}\PY{p}{=} \PY{k}{false}\PY{p}{)}
                 \PY{p}{\PYZob{}}
-                    \PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{Exchange}\PY{p}{\PYZgt{}} \PY{n}{exchanges} \PY{p}{=} \PY{k}{new} \PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{Exchange}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{p}{)}\PY{p}{;}
                     \PY{k+kt}{var} \PY{n}{products} \PY{p}{=} \PY{n}{client}\PY{p}{.}\PY{n}{ProductsService}\PY{p}{.}\PY{n}{GetAllProductsAsync}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Result}\PY{p}{;}
                     \PY{k}{foreach}\PY{p}{(}\PY{n}{Product} \PY{n}{prod} \PY{k}{in} \PY{n}{products}\PY{p}{)}
                     \PY{p}{\PYZob{}}
-                        \PY{n}{exchanges}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{k}{new} \PY{n}{Exchange}\PY{p}{(}\PY{p}{)}\PY{p}{\PYZob{}}\PY{n}{Name} \PY{p}{=} \PY{n}{prod}\PY{p}{.}\PY{n}{Id}\PY{p}{.}\PY{n}{ToString}\PY{p}{(}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{p}{)}\PY{p}{;}
+                        \PY{n}{Console}\PY{p}{.}\PY{n}{Write}\PY{p}{(}\PY{n}{prod}\PY{p}{.}\PY{n}{Id}\PY{p}{.}\PY{n}{ToString}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+                        \PY{n}{context}\PY{p}{.}\PY{n}{Exchanges}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{k}{new} \PY{n}{Exchange}\PY{p}{(}\PY{p}{)}\PY{p}{\PYZob{}}\PY{n}{Name} \PY{p}{=} \PY{n}{prod}\PY{p}{.}\PY{n}{Id}\PY{p}{.}\PY{n}{ToString}\PY{p}{(}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{p}{)}\PY{p}{;}
                     \PY{p}{\PYZcb{}}
-                    \PY{n}{context}\PY{p}{.}\PY{n}{Exchanges}\PY{p}{.}\PY{n}{AddRange}\PY{p}{(}\PY{n}{exchanges}\PY{p}{)}\PY{p}{;}
                     \PY{n}{context}\PY{p}{.}\PY{n}{SaveChanges}\PY{p}{(}\PY{p}{)}\PY{p}{;}
                 \PY{p}{\PYZcb{}}
 
@@ -151,13 +150,16 @@
             \PY{p}{\PYZob{}}
                 \PY{k}{foreach}\PY{p}{(}\PY{n}{Product} \PY{n}{p} \PY{k}{in} \PY{n}{client}\PY{p}{.}\PY{n}{ProductsService}\PY{p}{.}\PY{n}{GetAllProductsAsync}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Result}\PY{p}{)}
                 \PY{p}{\PYZob{}}
+                    \PY{n}{System}\PY{p}{.}\PY{n}{Threading}\PY{p}{.}\PY{n}{Thread}\PY{p}{.}\PY{n}{Sleep}\PY{p}{(}\PY{l+m}{3}\PY{l+m}{0}\PY{l+m}{0}\PY{l+m}{0}\PY{p}{)}\PY{p}{;}
                     \PY{k}{if}\PY{p}{(}\PY{n}{p}\PY{p}{.}\PY{n}{Id}\PY{p}{.}\PY{n}{ToString}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Equals}\PY{p}{(}\PY{n}{context}\PY{p}{.}\PY{n}{Exchanges}\PY{p}{.}\PY{n}{Find}\PY{p}{(}\PY{n}{exchangeID}\PY{p}{)}\PY{p}{.}\PY{n}{Name}\PY{p}{)}\PY{p}{)}
                     \PY{p}{\PYZob{}}
                         \PY{n}{TimeSpan} \PY{n}{t} \PY{p}{=} \PY{n}{endDate}\PY{p}{.}\PY{n}{Subtract}\PY{p}{(}\PY{n}{startDate}\PY{p}{)}\PY{p}{;}
                         \PY{k+kt}{int} \PY{n}{days} \PY{p}{=} \PY{p}{(}\PY{k+kt}{int}\PY{p}{)}\PY{n}{t}\PY{p}{.}\PY{n}{TotalDays}\PY{p}{;}
                             \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i} \PY{p}{=} \PY{l+m}{0}\PY{p}{;} \PY{n}{i} \PY{p}{\PYZlt{}} \PY{n}{days}\PY{p}{;} \PY{n}{i}\PY{p}{+}\PY{p}{+}\PY{p}{)}
                                 \PY{p}{\PYZob{}}
+                                    \PY{n}{System}\PY{p}{.}\PY{n}{Threading}\PY{p}{.}\PY{n}{Thread}\PY{p}{.}\PY{n}{Sleep}\PY{p}{(}\PY{l+m}{3}\PY{l+m}{0}\PY{l+m}{0}\PY{l+m}{0}\PY{p}{)}\PY{p}{;}
                                     \PY{k+kt}{var} \PY{n}{candles} \PY{p}{=} \PY{n}{client}\PY{p}{.}\PY{n}{ProductsService}\PY{p}{.}\PY{n}{GetHistoricRatesAsync}\PY{p}{(}\PY{n}{p}\PY{p}{.}\PY{n}{Id}\PY{p}{,} \PY{n}{startDate}\PY{p}{,} \PY{n}{endDate}\PY{p}{,} \PY{n}{CandleGranularity}\PY{p}{.}\PY{n}{Minutes1}\PY{p}{)}\PY{p}{.}\PY{n}{Result}\PY{p}{;}
+                                    \PY{n}{System}\PY{p}{.}\PY{n}{Threading}\PY{p}{.}\PY{n}{Thread}\PY{p}{.}\PY{n}{Sleep}\PY{p}{(}\PY{l+m}{1}\PY{l+m}{0}\PY{l+m}{0}\PY{l+m}{0}\PY{p}{)}\PY{p}{;}
                                     \PY{n}{Stat} \PY{n}{adder} \PY{p}{=} \PY{k}{new} \PY{n}{Stat}\PY{p}{(}\PY{p}{)}\PY{p}{\PYZob{}}
                                         \PY{n}{startDate} \PY{p}{=} \PY{n}{candles}\PY{p}{.}\PY{n}{First}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Time}\PY{p}{,}
                                         \PY{n}{endDate} \PY{p}{=} \PY{n}{candles}\PY{p}{.}\PY{n}{Last}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Time}  
@@ -179,7 +181,7 @@
                                     \PY{k+kt}{decimal} \PY{n}{candlesDiff} \PY{p}{=} \PY{l+m}{0.00}\PY{n}{M}\PY{p}{;}
                                     \PY{k}{foreach}\PY{p}{(}\PY{n}{Candle} \PY{n}{c} \PY{k}{in}  \PY{n}{candles}\PY{p}{)}
                                     \PY{p}{\PYZob{}}
-                                        \PY{n}{candlesDiff} \PY{p}{+}\PY{p}{=} \PY{p}{(}\PY{k+kt}{decimal}\PY{p}{)}\PY{p}{(}\PY{n}{c}\PY{p}{.}\PY{n}{Close} \PY{p}{\PYZhy{}} \PY{n}{c}\PY{p}{.}\PY{n}{Open}\PY{p}{)}\PY{p}{;}
+                                        \PY{n}{candlesDiff} \PY{p}{+}\PY{p}{=} \PY{n}{Convert}\PY{p}{.}\PY{n}{ToDecimal}\PY{p}{(}\PY{n}{c}\PY{p}{.}\PY{n}{Close} \PY{p}{\PYZhy{}} \PY{n}{c}\PY{p}{.}\PY{n}{Open}\PY{p}{)}\PY{p}{;}
                                     \PY{p}{\PYZcb{}}
                                     \PY{n}{adder}\PY{p}{.}\PY{n}{avgDiff} \PY{p}{=} \PY{n}{candlesDiff} \PY{p}{/} \PY{n}{candles}\PY{p}{.}\PY{n}{Count}\PY{p}{(}\PY{p}{)}\PY{p}{;}
                                     
@@ -189,7 +191,7 @@
                                     \PY{c+c1}{//average is calculated afterwards}
                                     \PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{TimeSpan}\PY{p}{\PYZgt{}} \PY{n}{growthTimes} \PY{p}{=} \PY{k}{new} \PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{TimeSpan}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{p}{)}\PY{p}{;}
                                     \PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{TimeSpan}\PY{p}{\PYZgt{}} \PY{n}{declineTimes} \PY{p}{=} \PY{k}{new} \PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{TimeSpan}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{p}{)}\PY{p}{;}
-                                    \PY{k+kt}{bool} \PY{n}{inGrowth} \PY{p}{=} \PY{k}{false}\PY{p}{;}
+                                    \PY{k+kt}{bool?} \PY{n}{inGrowth} \PY{p}{=} \PY{k}{null}\PY{p}{;}
                                     \PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{Candle}\PY{p}{\PYZgt{}} \PY{n}{growthCandles} \PY{p}{=} \PY{k}{new} \PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{Candle}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{p}{)}\PY{p}{;}
 
                                     \PY{k}{foreach}\PY{p}{(}\PY{n}{Candle} \PY{n}{c} \PY{k}{in} \PY{n}{candles}\PY{p}{)}
@@ -201,9 +203,10 @@
                                             \PY{n}{growthCandles}\PY{p}{.}\PY{n}{Clear}\PY{p}{(}\PY{p}{)}\PY{p}{;}
                                             \PY{n}{growthCandles}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{n}{c}\PY{p}{)}\PY{p}{;}
                                         \PY{p}{\PYZcb{}}
-                                        \PY{k}{else} \PY{n+nf}{if}\PY{p}{(}\PY{n}{c}\PY{p}{.}\PY{n}{Close} \PY{p}{\PYZgt{}} \PY{n}{c}\PY{p}{.}\PY{n}{Open} \PY{p}{\PYZam{}}\PY{p}{\PYZam{}} \PY{n}{inGrowth} \PY{p}{=}\PY{p}{=} \PY{k}{true}\PY{p}{)}
+                                        \PY{k}{else} \PY{n+nf}{if}\PY{p}{(}\PY{p}{(}\PY{n}{c}\PY{p}{.}\PY{n}{Close} \PY{p}{\PYZgt{}} \PY{n}{c}\PY{p}{.}\PY{n}{Open} \PY{p}{\PYZam{}}\PY{p}{\PYZam{}} \PY{n}{inGrowth} \PY{p}{=}\PY{p}{=} \PY{k}{true}\PY{p}{)} \PY{p}{|}\PY{p}{|} \PY{p}{(}\PY{n}{c}\PY{p}{.}\PY{n}{Close} \PY{p}{\PYZgt{}} \PY{n}{c}\PY{p}{.}\PY{n}{Open} \PY{p}{\PYZam{}}\PY{p}{\PYZam{}} \PY{n}{inGrowth} \PY{p}{=}\PY{p}{=} \PY{k}{null}\PY{p}{)}\PY{p}{)}
                                         \PY{p}{\PYZob{}}
                                             \PY{n}{growthCandles}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{n}{c}\PY{p}{)}\PY{p}{;}
+                                            \PY{n}{inGrowth} \PY{p}{=} \PY{k}{true}\PY{p}{;}
                                         \PY{p}{\PYZcb{}}
                                         \PY{k}{else} \PY{n+nf}{if}\PY{p}{(}\PY{n}{c}\PY{p}{.}\PY{n}{Close} \PY{p}{\PYZlt{}} \PY{n}{c}\PY{p}{.}\PY{n}{Open} \PY{p}{\PYZam{}}\PY{p}{\PYZam{}} \PY{n}{inGrowth} \PY{p}{=}\PY{p}{=} \PY{k}{true}\PY{p}{)}
                                         \PY{p}{\PYZob{}}
@@ -212,16 +215,17 @@
                                             \PY{n}{growthCandles}\PY{p}{.}\PY{n}{Clear}\PY{p}{(}\PY{p}{)}\PY{p}{;}
                                             \PY{n}{growthCandles}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{n}{c}\PY{p}{)}\PY{p}{;}
                                         \PY{p}{\PYZcb{}}
-                                        \PY{k}{else} \PY{n+nf}{if}\PY{p}{(}\PY{n}{c}\PY{p}{.}\PY{n}{Close} \PY{p}{\PYZlt{}} \PY{n}{c}\PY{p}{.}\PY{n}{Open} \PY{p}{\PYZam{}}\PY{p}{\PYZam{}} \PY{n}{inGrowth} \PY{p}{=}\PY{p}{=} \PY{k}{false}\PY{p}{)}
+                                        \PY{k}{else} \PY{n+nf}{if}\PY{p}{(}\PY{p}{(}\PY{n}{c}\PY{p}{.}\PY{n}{Close} \PY{p}{\PYZlt{}} \PY{n}{c}\PY{p}{.}\PY{n}{Open} \PY{p}{\PYZam{}}\PY{p}{\PYZam{}} \PY{n}{inGrowth} \PY{p}{=}\PY{p}{=} \PY{k}{false}\PY{p}{)} \PY{p}{|}\PY{p}{|} \PY{p}{(}\PY{n}{c}\PY{p}{.}\PY{n}{Close} \PY{p}{\PYZlt{}} \PY{n}{c}\PY{p}{.}\PY{n}{Open} \PY{p}{\PYZam{}}\PY{p}{\PYZam{}} \PY{n}{inGrowth} \PY{p}{=}\PY{p}{=} \PY{k}{null}\PY{p}{)}\PY{p}{)}
                                         \PY{p}{\PYZob{}}
                                             \PY{n}{growthCandles}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{n}{c}\PY{p}{)}\PY{p}{;}
+                                            \PY{n}{inGrowth} \PY{p}{=} \PY{k}{false}\PY{p}{;}
                                         \PY{p}{\PYZcb{}}
                                     \PY{p}{\PYZcb{}}
-                                    \PY{k}{if}\PY{p}{(}\PY{n}{inGrowth}\PY{p}{)}
+                                    \PY{k}{if}\PY{p}{(}\PY{n}{inGrowth} \PY{p}{=}\PY{p}{=} \PY{k}{true}\PY{p}{)}
                                     \PY{p}{\PYZob{}}
                                         \PY{n}{growthTimes}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{n}{growthCandles}\PY{p}{.}\PY{n}{Last}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Time}\PY{p}{.}\PY{n}{Subtract}\PY{p}{(}\PY{n}{growthCandles}\PY{p}{.}\PY{n}{First}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Time}\PY{p}{)}\PY{p}{)}\PY{p}{;}
                                     \PY{p}{\PYZcb{}}
-                                    \PY{k}{else}
+                                    \PY{k}{else} \PY{n+nf}{if} \PY{p}{(}\PY{n}{inGrowth} \PY{p}{=}\PY{p}{=} \PY{k}{false}\PY{p}{)}
                                     \PY{p}{\PYZob{}}
                                         \PY{n}{declineTimes}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{n}{growthCandles}\PY{p}{.}\PY{n}{Last}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Time}\PY{p}{.}\PY{n}{Subtract}\PY{p}{(}\PY{n}{growthCandles}\PY{p}{.}\PY{n}{First}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Time}\PY{p}{)}\PY{p}{)}\PY{p}{;}
                                     \PY{p}{\PYZcb{}}
@@ -246,7 +250,9 @@
                                 \PY{n}{startDate}\PY{p}{.}\PY{n}{AddDays}\PY{p}{(}\PY{p}{\PYZhy{}}\PY{n}{days}\PY{p}{)}\PY{p}{;}
                                 \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i} \PY{p}{=} \PY{l+m}{0}\PY{p}{;} \PY{n}{i} \PY{p}{\PYZlt{}} \PY{n}{days}\PY{p}{;} \PY{n}{i}\PY{p}{+}\PY{p}{+}\PY{p}{)}
                                 \PY{p}{\PYZob{}}
+                                    \PY{n}{System}\PY{p}{.}\PY{n}{Threading}\PY{p}{.}\PY{n}{Thread}\PY{p}{.}\PY{n}{Sleep}\PY{p}{(}\PY{l+m}{1}\PY{l+m}{0}\PY{l+m}{0}\PY{l+m}{0}\PY{p}{)}\PY{p}{;}
                                     \PY{k+kt}{var} \PY{n}{candles} \PY{p}{=} \PY{n}{client}\PY{p}{.}\PY{n}{ProductsService}\PY{p}{.}\PY{n}{GetHistoricRatesAsync}\PY{p}{(}\PY{n}{p}\PY{p}{.}\PY{n}{Id}\PY{p}{,} \PY{n}{startDate}\PY{p}{,} \PY{n}{endDate}\PY{p}{,} \PY{n}{CandleGranularity}\PY{p}{.}\PY{n}{Minutes1}\PY{p}{)}\PY{p}{.}\PY{n}{Result}\PY{p}{;}
+                                    \PY{n}{System}\PY{p}{.}\PY{n}{Threading}\PY{p}{.}\PY{n}{Thread}\PY{p}{.}\PY{n}{Sleep}\PY{p}{(}\PY{l+m}{1}\PY{l+m}{0}\PY{l+m}{0}\PY{l+m}{0}\PY{p}{)}\PY{p}{;}
                                     \PY{n}{Stat} \PY{n}{adder} \PY{p}{=} \PY{k}{new} \PY{n}{Stat}\PY{p}{(}\PY{p}{)}\PY{p}{\PYZob{}}
                                         \PY{n}{startDate} \PY{p}{=} \PY{n}{candles}\PY{p}{.}\PY{n}{First}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Time}\PY{p}{,}
                                         \PY{n}{endDate} \PY{p}{=} \PY{n}{candles}\PY{p}{.}\PY{n}{Last}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{Time}  

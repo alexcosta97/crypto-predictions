@@ -98,6 +98,7 @@
 \def\PYZlb{[}
 \def\PYZrb{]}
 \makeatother\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,numberblanklines=0]
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Shared.Utilities.Clock}\PY{p}{;}
 \PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Shared.Utilities.Extensions}\PY{p}{;}
 \PY{k}{using} \PY{n+nn}{System}\PY{p}{;}
 \PY{k}{using} \PY{n+nn}{System.Globalization}\PY{p}{;}
@@ -108,24 +109,49 @@
 
 \PY{k}{namespace} \PY{n+nn}{CryptoStats.GDAX.Network.HttpRequest}
 \PY{p}{\PYZob{}}
-    \PY{k}{public} \PY{k}{class} \PY{n+nc}{HttpRequestMessageService} \PY{p}{:} \PY{n}{IHttpRequestMessageService}
-    \PY{p}{\PYZob{}}
+    \PY{k}{public} \PY{k}{class} \PY{n+nc}{HttpRequestMessageService} \PY{p}{:} \PY{n}{IHttpRequestMessageService}\PY{p}{\PYZob{}}
+
+        \PY{k}{private} \PY{k}{readonly} \PY{n}{IClock} \PY{n}{clock}\PY{p}{;}
+
         \PY{k}{private} \PY{k}{readonly} \PY{k+kt}{bool} \PY{n}{sandBox}\PY{p}{;}
 
-        \PY{k}{public} \PY{n+nf}{HttpRequestMessageService}\PY{p}{(}\PY{k+kt}{bool} \PY{n}{sandBox}\PY{p}{)}
+        \PY{k}{public} \PY{n+nf}{HttpRequestMessageService}\PY{p}{(}
+            \PY{n}{IClock} \PY{n}{clock}\PY{p}{,}
+            \PY{k+kt}{bool} \PY{n}{sandBox}\PY{p}{)}
         \PY{p}{\PYZob{}}
+            \PY{k}{this}\PY{p}{.}\PY{n}{clock} \PY{p}{=} \PY{n}{clock}\PY{p}{;}
             \PY{k}{this}\PY{p}{.}\PY{n}{sandBox} \PY{p}{=} \PY{n}{sandBox}\PY{p}{;}
         \PY{p}{\PYZcb{}}
 
-        \PY{k}{public} \PY{n}{HttpRequestMessage} \PY{n+nf}{CreateHttpRequestMessage}\PY{p}{(}\PY{n}{HttpMethod} \PY{n}{httpMethod}\PY{p}{,} \PY{k+kt}{string} \PY{n}{requestUri}\PY{p}{,} \PY{k+kt}{string} \PY{n}{contentBody} \PY{p}{=} \PY{l+s}{\PYZdq{}\PYZdq{}}\PY{p}{)}
+        \PY{k}{public} \PY{n}{HttpRequestMessage} \PY{n+nf}{CreateHttpRequestMessage}\PY{p}{(}
+            \PY{n}{HttpMethod} \PY{n}{httpMethod}\PY{p}{,}
+            \PY{k+kt}{string} \PY{n}{requestUri}\PY{p}{,}
+            \PY{k+kt}{string} \PY{n}{contentBody} \PY{p}{=} \PY{l+s}{\PYZdq{}\PYZdq{}}\PY{p}{)}
         \PY{p}{\PYZob{}}
-            \PY{k+kt}{var} \PY{n}{apiUri} \PY{p}{=} \PY{n}{sandBox} \PY{p}{?} \PY{n}{ApiUris}\PY{p}{.}\PY{n}{ApiUriSandbox} \PY{p}{:} \PY{n}{ApiUris}\PY{p}{.}\PY{n}{ApiUri}\PY{p}{;}
+
+            \PY{k+kt}{var} \PY{n}{apiUri} \PY{p}{=} \PY{n}{sandBox}
+                \PY{p}{?} \PY{n}{ApiUris}\PY{p}{.}\PY{n}{ApiUriSandbox}
+                \PY{p}{:} \PY{n}{ApiUris}\PY{p}{.}\PY{n}{ApiUri}\PY{p}{;}
 
             \PY{k+kt}{var} \PY{n}{requestMessage} \PY{p}{=} \PY{k}{new} \PY{n}{HttpRequestMessage}\PY{p}{(}\PY{n}{httpMethod}\PY{p}{,} \PY{k}{new} \PY{n}{Uri}\PY{p}{(}\PY{k}{new} \PY{n}{Uri}\PY{p}{(}\PY{n}{apiUri}\PY{p}{)}\PY{p}{,} \PY{n}{requestUri}\PY{p}{)}\PY{p}{)}
             \PY{p}{\PYZob{}}
-                \PY{n}{Content} \PY{p}{=} \PY{n}{contentBody} \PY{p}{=}\PY{p}{=} \PY{k+kt}{string}\PY{p}{.}\PY{n}{Empty} \PY{p}{?} \PY{k}{null} \PY{p}{:} \PY{k}{new} \PY{n}{StringContent}\PY{p}{(}\PY{n}{contentBody}\PY{p}{,} \PY{n}{Encoding}\PY{p}{.}\PY{n}{UTF8}\PY{p}{,} \PY{l+s}{\PYZdq{}application/json\PYZdq{}}\PY{p}{)}
+                \PY{n}{Content} \PY{p}{=} \PY{n}{contentBody} \PY{p}{=}\PY{p}{=} \PY{k+kt}{string}\PY{p}{.}\PY{n}{Empty}
+                    \PY{p}{?} \PY{k}{null}
+                    \PY{p}{:} \PY{k}{new} \PY{n}{StringContent}\PY{p}{(}\PY{n}{contentBody}\PY{p}{,} \PY{n}{Encoding}\PY{p}{.}\PY{n}{UTF8}\PY{p}{,} \PY{l+s}{\PYZdq{}application/json\PYZdq{}}\PY{p}{)}
             \PY{p}{\PYZcb{}}\PY{p}{;}
+
+            \PY{k+kt}{var} \PY{n}{timeStamp} \PY{p}{=} \PY{n}{clock}\PY{p}{.}\PY{n}{GetTime}\PY{p}{(}\PY{p}{)}\PY{p}{.}\PY{n}{ToTimeStamp}\PY{p}{(}\PY{p}{)}\PY{p}{;}
+
+            \PY{n}{AddHeaders}\PY{p}{(}\PY{n}{requestMessage}\PY{p}{,} \PY{n}{timeStamp}\PY{p}{)}\PY{p}{;}
             \PY{k}{return} \PY{n}{requestMessage}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{k}{private} \PY{k}{void} \PY{n+nf}{AddHeaders}\PY{p}{(}
+            \PY{n}{HttpRequestMessage} \PY{n}{httpRequestMessage}\PY{p}{,}
+            \PY{k+kt}{double} \PY{n}{timeStamp}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{n}{httpRequestMessage}\PY{p}{.}\PY{n}{Headers}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{l+s}{\PYZdq{}User\PYZhy{}Agent\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}GDAXClient\PYZdq{}}\PY{p}{)}\PY{p}{;}
+            \PY{n}{httpRequestMessage}\PY{p}{.}\PY{n}{Headers}\PY{p}{.}\PY{n}{Add}\PY{p}{(}\PY{l+s}{\PYZdq{}CB\PYZhy{}ACCESS\PYZhy{}TIMESTAMP\PYZdq{}}\PY{p}{,} \PY{n}{timeStamp}\PY{p}{.}\PY{n}{ToString}\PY{p}{(}\PY{l+s}{\PYZdq{}F0\PYZdq{}}\PY{p}{,} \PY{n}{CultureInfo}\PY{p}{.}\PY{n}{InvariantCulture}\PY{p}{)}\PY{p}{)}\PY{p}{;}
         \PY{p}{\PYZcb{}}
     \PY{p}{\PYZcb{}}
 \PY{p}{\PYZcb{}}
