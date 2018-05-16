@@ -68,4 +68,11 @@ Here is the code for the API:
 
 \captionsetup{type=figure}\captionof{figure}{ProductsService.cs}
 \subfile{pyg/src/CryptoStats/GDAX/Services/Products/ProductsService}
+
+For the GDAX Client, an instance of HttpClient, and JSON deserializers have been used to send HTTP requests to the input API and deserialize the data sent back from the request.
+
+The output API was built using REST technology, and sends JSON responses that the system automatically serializes from the ActionResults that the controllers return.
 \section{Testing}
+Testing as been done alongside the build of the project, as features were being implemented to make sure that everything was being working as it was supposed to.
+
+Testing as been done on different browsers (Google Chrome, Chromium, Firefox) and also using Sqliteman to make sure that the database was being populated properly.
