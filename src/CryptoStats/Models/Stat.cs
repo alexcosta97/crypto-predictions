@@ -7,10 +7,10 @@ namespace CryptoStats.Models
         public int StatId{get;set;}
         public DateTime startDate {get;set;}
         public DateTime endDate{get;set;}
-        public double HighestLatestDiff{get;set;}
-        public double avgDiff {get;set;}
-        public long avgGrowthTime {get;set;}
-        public long avgDeclineTime {get;set;}
+        public decimal HighestLatestDiff{get;set;}
+        public decimal avgDiff {get;set;}
+        public TimeSpan avgGrowthTime {get;set;}
+        public TimeSpan avgDeclineTime {get;set;}
 
         //Setting variables for foreign key
         public int ExchangeId{get;set;}

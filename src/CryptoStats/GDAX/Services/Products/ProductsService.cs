@@ -25,9 +25,9 @@ namespace CryptoStats.GDAX.Services.Products
             this.queryBuilder = queryBuilder;
         }
 
-        public async Task<IEnumerable<Product>> GetAllProductsAsync()
+        public async Task<List<Product>> GetAllProductsAsync()
         {
-            return await SendServiceCall<IEnumerable<Product>>(HttpMethod.Get, "/products");
+            return await SendServiceCall<List<Product>>(HttpMethod.Get, "/products");
         }
 
         public async Task<ProductsOrderBookResponse> GetProductOrderBookAsync(

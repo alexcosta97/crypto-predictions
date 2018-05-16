@@ -16,13 +16,6 @@ namespace CryptoStats.Controllers
         public StatsController(CryptoContext context)
         {
             _context = context;
-
-            //Populate DB with dummy data if none is present already
-            if(_context.Stats.Count() == 0)
-            {
-                _context.Stats.Add(new Stat {startDate = DateTime.Now, endDate = DateTime.Now, HighestLatestDiff = 0.00, avgDiff = 0.00, avgGrowthTime = 0, avgDeclineTime = 0});
-                _context.SaveChangesAsync();
-            }
         }
 
         [HttpGet]
@@ -80,7 +73,7 @@ namespace CryptoStats.Controllers
         //Find HighestLatestDiff by using a different Get URL
         //api/stats/highestlatest/id or dates as parameters
         [HttpGet("/highestlatest/{id}", Name="GetHighestLatestID")]
-        public ActionResult<double> GetHighestLatestByID(int id)
+        public ActionResult<decimal> GetHighestLatestByID(int id)
         {
             var item = _context.Stats.Find(id);
             if(item == null)
@@ -91,7 +84,7 @@ namespace CryptoStats.Controllers
         }
 
         [HttpGet("/highestlatest")]
-        public ActionResult<double> GetHighestLatestByEndDate([FromQuery] DateTime endDate)
+        public ActionResult<decimal> GetHighestLatestByEndDate([FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.endDate == endDate).Last();
             if(item == null)
@@ -102,7 +95,7 @@ namespace CryptoStats.Controllers
         }
 
         [HttpGet("/highestlatest")]
-        public ActionResult<double> GetHighestLatestByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+        public ActionResult<decimal> GetHighestLatestByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
             if(item == null)
@@ -116,7 +109,7 @@ namespace CryptoStats.Controllers
         //Example api/stats/avgdiff/{id} or dates
 
         [HttpGet("/avgdiff/{id}", Name="GetAvgDiffByID")]
-        public ActionResult<double> GetAvgDiffByID(int id)
+        public ActionResult<decimal> GetAvgDiffByID(int id)
         {
             var item = _context.Stats.Find(id);
             if(item == null)
@@ -130,43 +123,43 @@ namespace CryptoStats.Controllers
         //start date onwards are put on a list and the overall avg is
         //calculated
         [HttpGet("/avgdiff")]
-        public ActionResult<double> GetAvgDiffByStartDate([FromQuery] DateTime startDate)
+        public ActionResult<decimal> GetAvgDiffByStartDate([FromQuery] DateTime startDate)
         {
             var items = _context.Stats.Where(s => s.startDate == startDate).ToList();
             if(items == null)
             {
                 return NotFound();
             }
-            double avgs = 0.00;
+            decimal avgs = 0.00M;
             foreach(Stat s in items)
             {
                 avgs += s.avgDiff;
             }
-            double avgDiff = avgs / items.Count();
+            decimal avgDiff = avgs / items.Count();
             return avgDiff;
         }
 
         //To get the avgDiff from endDate, the same procedure as for from startDate is applied: avg of avgs
         [HttpGet("/avgdiff")]
-        public ActionResult<double> GetAvgDiffByEndDate([FromQuery] DateTime endDate)
+        public ActionResult<decimal> GetAvgDiffByEndDate([FromQuery] DateTime endDate)
         {
             var items = _context.Stats.Where(s => s.endDate == endDate).ToList();
             if(items == null)
             {
                 return NotFound();
             }
-            double avgs = 0.00;
+            decimal avgs = 0.00M;
             foreach(Stat s in items)
             {
                 avgs += s.avgDiff;
             }
-            double avgDiff = avgs / items.Count();
+            decimal avgDiff = avgs / items.Count();
             return avgDiff;
         }
 
         //The same procedure is applied for an id search is applied when looking for the avgDiff with a start and end dates
         [HttpGet("/avgdiff")]
-        public ActionResult<double> GetAvgDiffByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+        public ActionResult<decimal> GetAvgDiffByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
             if(item == null)
@@ -179,7 +172,7 @@ namespace CryptoStats.Controllers
         //Get avgGrowth values from stats using different GET URL
         //Example api/stats/avggrowth/{id} or dates as parameters
         [HttpGet("/avggrowth/{id}", Name="GetAvgGrowthByID")]
-        public ActionResult<long> GetAvgGrowthByID(int id)
+        public ActionResult<TimeSpan> GetAvgGrowthByID(int id)
         {
             var item = _context.Stats.Find(id);
             if(item == null)
@@ -191,39 +184,39 @@ namespace CryptoStats.Controllers
 
         //To get the avgGrowthTime for a start or end date, the same procedure as for the avgDiff is applied, meaning doing an avg of avgs
         [HttpGet("/avggrowth")]
-        public ActionResult<long> GetAvgGrowthByStartDate([FromQuery] DateTime startDate)
+        public ActionResult<TimeSpan> GetAvgGrowthByStartDate([FromQuery] DateTime startDate)
         {
             var items = _context.Stats.Where(s => s.startDate == startDate).ToList();
             if(items == null)
             {
                 return NotFound();
             }
-            long times = 0;
+            double times = 0;
             foreach(Stat s in items)
             {
-                times += s.avgGrowthTime;
+                times += s.avgGrowthTime.TotalMilliseconds;
             }
-            return times / items.Count();
+            return TimeSpan.FromMilliseconds(times / items.Count());
         }
 
         [HttpGet("/avggrowth")]
-        public ActionResult<long> GetAvgGrowthByEndDate([FromQuery] DateTime endDate)
+        public ActionResult<TimeSpan> GetAvgGrowthByEndDate([FromQuery] DateTime endDate)
         {
             var items = _context.Stats.Where(s => s.endDate == endDate).ToList();
             if(items == null)
             {
                 return NotFound();
             }
-            long times = 0;
+            double times = 0;
             foreach(Stat s in items)
             {
-                times += s.avgGrowthTime;
+                times += s.avgGrowthTime.TotalMilliseconds;
             }
-            return times / items.Count();
+            return TimeSpan.FromMilliseconds(times / items.Count());
         }
 
         [HttpGet("/avggrowth")]
-        public ActionResult<long> GetAvgGrowthByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+        public ActionResult<TimeSpan> GetAvgGrowthByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
             if(item == null)
@@ -236,7 +229,7 @@ namespace CryptoStats.Controllers
         //To get the avgDecline values, same procedures apply as for avgGrowth
         //URLs are built the same way as for avgDecline, but with avgdecline instead of avggrowth
         [HttpGet("/avgdecline/{id}", Name="GetAvgDeclineByID")]
-        public ActionResult<long> GetAvgDeclineByID(int id)
+        public ActionResult<TimeSpan> GetAvgDeclineByID(int id)
         {
             var item = _context.Stats.Find(id);
             if(item == null)
@@ -247,39 +240,39 @@ namespace CryptoStats.Controllers
         }
         
         [HttpGet("/avgdecline")]
-        public ActionResult<long> GetAvgDeclineByStartDate([FromQuery] DateTime startDate)
+        public ActionResult<TimeSpan> GetAvgDeclineByStartDate([FromQuery] DateTime startDate)
         {
             var items = _context.Stats.Where(s => s.startDate == startDate).ToList();
             if(items == null)
             {
                 return NotFound();
             }
-            long times = 0;
+            double times = 0;
             foreach(Stat s in items)
             {
-                times += s.avgDeclineTime;
+                times += s.avgDeclineTime.TotalMilliseconds;
             }
-            return times / items.Count();
+            return TimeSpan.FromMilliseconds(times / items.Count());
         }
 
         [HttpGet("/avgdecline")]
-        public ActionResult<long> GetAvgDeclineByEndDate([FromQuery] DateTime endDate)
+        public ActionResult<TimeSpan> GetAvgDeclineByEndDate([FromQuery] DateTime endDate)
         {
             var items = _context.Stats.Where(s => s.endDate == endDate).ToList();
             if(items == null)
             {
                 return NotFound();
             }
-            long times = 0;
+            double times = 0;
             foreach(Stat s in items)
             {
-                times += s.avgDeclineTime;
+                times += s.avgDeclineTime.TotalMilliseconds;
             }
-            return times / items.Count();
+            return TimeSpan.FromMilliseconds(times / items.Count());
         }
 
         [HttpGet("/avgdecline")]
-        public ActionResult<long> GetAvgDeclineByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+        public ActionResult<TimeSpan> GetAvgDeclineByDates([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var item = _context.Stats.Where(s => s.startDate == startDate && s.endDate == endDate).First();
             if(item == null)
