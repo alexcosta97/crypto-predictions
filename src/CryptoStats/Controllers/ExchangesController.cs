@@ -15,13 +15,6 @@ namespace CryptoStats.Controllers
         public ExchangesController(CryptoContext context)
         {
             _context = context;
-
-            //Populate DB with dummy data if none is present already
-            if(_context.Exchanges.Count() == 0)
-            {
-                _context.Exchanges.Add(new Exchange {Name = "Exchange1"});
-                _context.SaveChangesAsync();
-            }
         }
 
         [HttpGet]
