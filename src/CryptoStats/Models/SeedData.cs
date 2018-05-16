@@ -30,7 +30,8 @@ namespace CryptoStats.Models
                     {
                         exchanges.Add(new Exchange(){Name = prod.Id.ToString()});
                     }
-                    context.Exchanges.AddRangeAsync(exchanges);
+                    context.Exchanges.AddRange(exchanges);
+                    context.SaveChanges();
                 }
 
                 if(!context.Stats.Any())
@@ -139,7 +140,6 @@ namespace CryptoStats.Models
                                     }
                                     adder.avgDeclineTime = TimeSpan.FromMilliseconds(totalTimes / declineTimes.Count());
                                     context.Stats.Add(adder);
-                                    context.SaveChangesAsync();
                                     startDate.AddDays(1);
                                 }
 
@@ -229,9 +229,9 @@ namespace CryptoStats.Models
                                     }
                                     adder.avgDeclineTime = TimeSpan.FromMilliseconds(totalTimes / declineTimes.Count());
                                     context.Stats.Add(adder);
-                                    context.SaveChangesAsync();
                                     endDate.AddDays(-1);
                                 }
+                                context.SaveChanges();
                     }
                 }
             }

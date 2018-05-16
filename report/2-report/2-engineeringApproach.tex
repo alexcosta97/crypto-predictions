@@ -1,1 +1,36 @@
 \chapter{Engineering Approach}
+For this project, I worked in an agile and iterative manner, based on the SCRUM methodology.
+
+\section{Requirements specification}
+When specifying the requirements for the project, I started by choosing what I wanted the project to offer to the users initially. I started by thinking of the core functionality that I wanted for the project and what data I wanted my API to expose to the user. After deciding on the data that would be exposed, I started specifying the requirements that would lead to the exposure of the data, by doing a list of the core functionality that the API would have:
+\begin{itemize}
+    \item Display all the exchanges and statistics
+    \item Display exchanges and statistics by id
+    \item Display statistics by start date
+    \item Display statistics by end date
+    \item Display statistics by start and end date
+    \item Display statistics related to a single exchange
+    \item Display statistics related to a single exchange by id
+    \item Display statistics related to a single exchange by start date
+    \item Display statistics related to a single exchange by end date
+    \item Display statistics related to a single exchange by start and end date
+\end{itemize}
+
+Most of this funcionality would allow the user to retrieve different series of data by the criteria that they choose (id and or range of dates) and the type of data that they are looking for (exchange or statistics).
+
+\section{Designing}
+I started designing the implementation of the features on paper, by writing down the parts of the algorithms that would implement the features that were the most difficult to implement.
+
+In order to implement the features, I chose to go with a Model-Controller approach, where the data would be initially stored and retrieved through the models and the business logic and presentation of the data would occur in the controller. The business logic that would allow the API to seed the database and add data to it would also work in the models.
+
+\section{Implementation}
+For the implementation, I started by implementing the models and the database context that would allow the connection to the database, storage and retrieval of the data.
+
+After that, I implemented the controllers and added the functionality that would display the JSON results to the user.
+
+After all of that was done, I moved on to implement the features that would retrieve data from the input API and process it. For that, I studied and modified a library client that was available for the API I was using, so that only the functions that I needed for my project would be available, and created new namespaces for those functionalities.
+
+After implementing the seeding and storage of new data functinoalities, I started implementing the front-end of my project. Based on my previous UI design and wireframes, I used the planned technologies to build a front-end that would resemble the original design as much as possible.
+
+\section{Testing}
+This project was throughly tested as it was being built. As soon as a new feature would be implemented, the project would be tested to make sure that everything was working as expected and that everything was also behaving and looking in an expected way.
