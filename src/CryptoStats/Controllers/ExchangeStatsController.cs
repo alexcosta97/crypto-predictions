@@ -31,7 +31,7 @@ namespace CryptoStats.Controllers
             }
         }
 
-        [HttpGet("exchanges/{id}/stats/{statId}")]
+        [HttpGet("exchanges/{id}/stats/id/{statId}")]
         public ActionResult<Stat> GetByID(int id, int statId)
         {
             var exchange = _context.Exchanges.Where(e => e.ExchangeId == id).First();
@@ -45,7 +45,7 @@ namespace CryptoStats.Controllers
             }
         }
 
-        [HttpGet("exchanges/{id}/stats/{startDate}")]
+        [HttpGet("exchanges/{id}/stats/startDate/{startDate}")]
         public ActionResult<List<Stat>> GetByStartDate(int id, DateTime startDate)
         {
             var exchange = _context.Exchanges.Where(e => e.ExchangeId == id).First();
@@ -59,7 +59,7 @@ namespace CryptoStats.Controllers
             }
         }
 
-        [HttpGet("exchanges/{id}/stats/{endDate}")]
+        [HttpGet("exchanges/{id}/stats/endDate/{endDate}")]
         public ActionResult<List<Stat>> GetByEndDate(int id, DateTime endDate)
         {
             var exchange = _context.Exchanges.Where(e => e.ExchangeId== id).First();
@@ -73,7 +73,7 @@ namespace CryptoStats.Controllers
             }
         }
 
-        [HttpGet("exchanges/{id}/stats/{startDate}/{endDate}")]
+        [HttpGet("exchanges/{id}/stats/dates/{startDate}/{endDate}")]
         public ActionResult<Stat> GetByDates(int id, DateTime startDate, DateTime endDate)
         {
             var exchange = _context.Exchanges.Where(e => e.ExchangeId == id).First();

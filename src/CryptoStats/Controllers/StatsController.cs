@@ -55,5 +55,16 @@ namespace CryptoStats.Controllers
             }
             return items;
         }
+
+        [HttpGet("/dates/{startDate}/{endDate}")]
+        public ActionResult<Stat> GetByDates(DateTime startDate, DateTime endDate)
+        {
+            var item = _context.Stats.Where(s => s.startDate.Equals(startDate) && s.endDate.Equals(endDate)).First();
+            if(item == null)
+            {
+                return NotFound();
+            }
+            return item;
+        }
     }
 }
