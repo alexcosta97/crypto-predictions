@@ -1,0 +1,242 @@
+
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,numberblanklines=0]
+\PY{k}{using} \PY{n+nn}{System}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{System.Collections.Generic}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{System.Globalization}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{System.Linq}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{System.Net.Http}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{System.Threading.Tasks}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Services}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Network.HttpClient}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Network.HttpRequest}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Services.Products.Models}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Services.Products.Models.Responses}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Services.Products.Types}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Shared.Types}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Shared.Utilities.Extensions}\PY{p}{;}
+\PY{k}{using} \PY{n+nn}{CryptoStats.GDAX.Shared.Utilities.Queries}\PY{p}{;}
+
+\PY{k}{namespace} \PY{n+nn}{CryptoStats.GDAX.Services.Products}
+\PY{p}{\PYZob{}}
+    \PY{k}{public} \PY{k}{class} \PY{n+nc}{ProductsService}\PY{p}{:} \PY{n}{AbstractService}
+    \PY{p}{\PYZob{}}
+        \PY{k}{private} \PY{k}{readonly} \PY{n}{IQueryBuilder} \PY{n}{queryBuilder}\PY{p}{;}
+
+        \PY{k}{public} \PY{n+nf}{ProductsService}\PY{p}{(}\PY{n}{IHttpClient} \PY{n}{httpClient}\PY{p}{,} \PY{n}{IHttpRequestMessageService} \PY{n}{httpRequestMessageService}\PY{p}{,} \PY{n}{IQueryBuilder} \PY{n}{queryBuilder}\PY{p}{)} \PY{p}{:} \PY{k}{base}\PY{p}{(}\PY{n}{httpClient}\PY{p}{,} \PY{n}{httpRequestMessageService}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{k}{this}\PY{p}{.}\PY{n}{queryBuilder} \PY{p}{=} \PY{n}{queryBuilder}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{k}{public} \PY{k}{async} \PY{n}{Task}\PY{p}{\PYZlt{}}\PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{Product}\PY{p}{\PYZgt{}}\PY{p}{\PYZgt{}} \PY{n}{GetAllProductsAsync}\PY{p}{(}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{k}{return} \PY{k}{await} \PY{n}{SendServiceCall}\PY{p}{\PYZlt{}}\PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{Product}\PY{p}{\PYZgt{}}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{n}{HttpMethod}\PY{p}{.}\PY{n}{Get}\PY{p}{,} \PY{l+s}{\PYZdq{}/products\PYZdq{}}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{k}{public} \PY{k}{async} \PY{n}{Task}\PY{p}{\PYZlt{}}\PY{n}{ProductsOrderBookResponse}\PY{p}{\PYZgt{}} \PY{n}{GetProductOrderBookAsync}\PY{p}{(}
+			\PY{n}{ProductType} \PY{n}{productId}\PY{p}{,}
+			\PY{n}{ProductLevel} \PY{n}{productLevel} \PY{p}{=} \PY{n}{ProductLevel}\PY{p}{.}\PY{n}{One}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{k+kt}{var} \PY{n}{productsOrderBookJsonResponse} \PY{p}{=} \PY{k}{await} \PY{n}{SendServiceCall}\PY{p}{\PYZlt{}}\PY{n}{ProductsOrderBookJsonResponse}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{n}{HttpMethod}\PY{p}{.}\PY{n}{Get}\PY{p}{,} \PY{err}{\PYZdl{}}\PY{l+s}{\PYZdq{}/products/\PYZob{}productId.GetEnumMemberValue()\PYZcb{}/book/?level=\PYZob{}(int) productLevel\PYZcb{}\PYZdq{}}\PY{p}{)}\PY{p}{.}\PY{n}{ConfigureAwait}\PY{p}{(}\PY{k}{false}\PY{p}{)}\PY{p}{;}
+            \PY{k+kt}{var} \PY{n}{productOrderBookResponse} \PY{p}{=} \PY{n}{ConvertProductOrderBookResponse}\PY{p}{(}\PY{n}{productsOrderBookJsonResponse}\PY{p}{,} \PY{n}{productLevel}\PY{p}{)}\PY{p}{;}
+
+            \PY{k}{return} \PY{n}{productOrderBookResponse}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{k}{public} \PY{k}{async} \PY{n}{Task}\PY{p}{\PYZlt{}}\PY{n}{ProductTicker}\PY{p}{\PYZgt{}} \PY{n}{GetProductTickerAsync}\PY{p}{(}\PY{n}{ProductType} \PY{n}{productId}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{k}{return} \PY{k}{await} \PY{n}{SendServiceCall}\PY{p}{\PYZlt{}}\PY{n}{ProductTicker}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{n}{HttpMethod}\PY{p}{.}\PY{n}{Get}\PY{p}{,} \PY{err}{\PYZdl{}}\PY{l+s}{\PYZdq{}/products/\PYZob{}productId.GetEnumMemberValue()\PYZcb{}/ticker\PYZdq{}}\PY{p}{)}\PY{p}{.}\PY{n}{ConfigureAwait}\PY{p}{(}\PY{k}{false}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{k}{public} \PY{k}{async} \PY{n}{Task}\PY{p}{\PYZlt{}}\PY{n}{ProductStats}\PY{p}{\PYZgt{}} \PY{n}{GetProductStatsAsync}\PY{p}{(}\PY{n}{ProductType} \PY{n}{productId}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{k}{return} \PY{k}{await} \PY{n}{SendServiceCall}\PY{p}{\PYZlt{}}\PY{n}{ProductStats}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{n}{HttpMethod}\PY{p}{.}\PY{n}{Get}\PY{p}{,} \PY{err}{\PYZdl{}}\PY{l+s}{\PYZdq{}/products/\PYZob{}productId.GetEnumMemberValue()\PYZcb{}/stats\PYZdq{}}\PY{p}{)}\PY{p}{.}\PY{n}{ConfigureAwait}\PY{p}{(}\PY{k}{false}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{k}{public} \PY{k}{async} \PY{n}{Task}\PY{p}{\PYZlt{}}\PY{n}{IList}\PY{p}{\PYZlt{}}\PY{n}{IList}\PY{p}{\PYZlt{}}\PY{n}{ProductTrade}\PY{p}{\PYZgt{}}\PY{p}{\PYZgt{}}\PY{p}{\PYZgt{}} \PY{n}{GetTradesAsync}\PY{p}{(}
+            \PY{n}{ProductType} \PY{n}{productId}\PY{p}{,}
+            \PY{k+kt}{int} \PY{n}{limit} \PY{p}{=} \PY{l+m}{1}\PY{l+m}{0}\PY{l+m}{0}\PY{p}{,}
+            \PY{k+kt}{int} \PY{n}{numberOfPages} \PY{p}{=} \PY{l+m}{0}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{k+kt}{var} \PY{n}{httpResponseMessage} \PY{p}{=} \PY{k}{await} \PY{n}{SendHttpRequestMessagePagedAsync}\PY{p}{\PYZlt{}}\PY{n}{ProductTrade}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{n}{HttpMethod}\PY{p}{.}\PY{n}{Get}\PY{p}{,} \PY{err}{\PYZdl{}}\PY{l+s}{\PYZdq{}/products/\PYZob{}productId.GetEnumMemberValue()\PYZcb{}/trades?limit=\PYZob{}limit\PYZcb{}\PYZdq{}}\PY{p}{,} \PY{n}{numberOfPages}\PY{p}{:} \PY{n}{numberOfPages}\PY{p}{)}\PY{p}{;}
+
+            \PY{k}{return} \PY{n}{httpResponseMessage}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{k}{public} \PY{k}{async} \PY{n}{Task}\PY{p}{\PYZlt{}}\PY{n}{IList}\PY{p}{\PYZlt{}}\PY{n}{Candle}\PY{p}{\PYZgt{}}\PY{p}{\PYZgt{}} \PY{n}{GetHistoricRatesAsync}\PY{p}{(}
+			\PY{n}{ProductType} \PY{n}{productPair}\PY{p}{,}
+			\PY{n}{DateTime} \PY{n}{start}\PY{p}{,}
+			\PY{n}{DateTime} \PY{n}{end}\PY{p}{,}
+			\PY{n}{CandleGranularity} \PY{n}{granularity}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{k}{const} \PY{k+kt}{int} \PY{n}{maxPeriods} \PY{p}{=} \PY{l+m}{3}\PY{l+m}{0}\PY{l+m}{0}\PY{p}{;}
+
+            \PY{k+kt}{var} \PY{n}{candleList} \PY{p}{=} \PY{k}{new} \PY{n}{List}\PY{p}{\PYZlt{}}\PY{n}{Candle}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{p}{)}\PY{p}{;}
+
+            \PY{n}{DateTime}\PY{p}{?} \PY{n}{batchEnd} \PY{p}{=} \PY{n}{end}\PY{p}{;}
+            \PY{n}{DateTime} \PY{n}{batchStart}\PY{p}{;}
+
+            \PY{k+kt}{var} \PY{n}{maxBatchPeriod} \PY{p}{=} \PY{p}{(}\PY{k+kt}{int}\PY{p}{)}\PY{n}{granularity} \PY{p}{*} \PY{n}{maxPeriods}\PY{p}{;}
+
+            \PY{k}{do}
+            \PY{p}{\PYZob{}}
+                \PY{k}{if} \PY{p}{(}\PY{n}{batchEnd} \PY{p}{=}\PY{p}{=} \PY{k}{null}\PY{p}{)} \PY{p}{\PYZob{}}
+                    \PY{k}{break}\PY{p}{;}
+                \PY{p}{\PYZcb{}}
+
+                \PY{n}{batchStart} \PY{p}{=} \PY{n}{batchEnd}\PY{p}{.}\PY{n}{Value}\PY{p}{.}\PY{n}{AddSeconds}\PY{p}{(}\PY{p}{\PYZhy{}}\PY{n}{maxBatchPeriod}\PY{p}{)}\PY{p}{;}
+                \PY{k}{if} \PY{p}{(}\PY{n}{batchStart} \PY{p}{\PYZlt{}} \PY{n}{start}\PY{p}{)} \PY{n}{batchStart} \PY{p}{=} \PY{n}{start}\PY{p}{;}
+
+                \PY{n}{candleList}\PY{p}{.}\PY{n}{AddRange}\PY{p}{(}\PY{k}{await} \PY{n}{GetHistoricRatesAsync}\PY{p}{(}\PY{n}{productPair}\PY{p}{,} \PY{n}{batchStart}\PY{p}{,} \PY{n}{batchEnd}\PY{p}{.}\PY{n}{Value}\PY{p}{,} \PY{p}{(}\PY{k+kt}{int}\PY{p}{)}\PY{n}{granularity}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+
+                \PY{n}{batchEnd} \PY{p}{=} \PY{n}{candleList}\PY{p}{.}\PY{n}{LastOrDefault}\PY{p}{(}\PY{p}{)}\PY{p}{?}\PY{p}{.}\PY{n}{Time}\PY{p}{;}
+
+            \PY{p}{\PYZcb{}} \PY{k}{while} \PY{p}{(}\PY{n}{batchStart} \PY{p}{\PYZgt{}} \PY{n}{start}\PY{p}{)}\PY{p}{;}
+
+            \PY{k}{return} \PY{n}{candleList}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{k}{private} \PY{k}{async} \PY{n}{Task}\PY{p}{\PYZlt{}}\PY{n}{IList}\PY{p}{\PYZlt{}}\PY{n}{Candle}\PY{p}{\PYZgt{}}\PY{p}{\PYZgt{}} \PY{n}{GetHistoricRatesAsync}\PY{p}{(}
+			\PY{n}{ProductType} \PY{n}{productId}\PY{p}{,}
+			\PY{n}{DateTime} \PY{n}{start}\PY{p}{,}
+			\PY{n}{DateTime} \PY{n}{end}\PY{p}{,}
+			\PY{k+kt}{int} \PY{n}{granularity}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{k+kt}{var} \PY{n}{isoStart} \PY{p}{=} \PY{n}{start}\PY{p}{.}\PY{n}{ToString}\PY{p}{(}\PY{l+s}{\PYZdq{}s\PYZdq{}}\PY{p}{)}\PY{p}{;}
+            \PY{k+kt}{var} \PY{n}{isoEnd} \PY{p}{=} \PY{n}{end}\PY{p}{.}\PY{n}{ToString}\PY{p}{(}\PY{l+s}{\PYZdq{}s\PYZdq{}}\PY{p}{)}\PY{p}{;}
+
+            \PY{k+kt}{var} \PY{n}{queryString} \PY{p}{=} \PY{n}{queryBuilder}\PY{p}{.}\PY{n}{BuildQuery}\PY{p}{(}
+                \PY{k}{new} \PY{n}{KeyValuePair}\PY{p}{\PYZlt{}}\PY{k+kt}{string}\PY{p}{,} \PY{k+kt}{string}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{l+s}{\PYZdq{}start\PYZdq{}}\PY{p}{,} \PY{n}{isoStart}\PY{p}{)}\PY{p}{,}
+                \PY{k}{new} \PY{n}{KeyValuePair}\PY{p}{\PYZlt{}}\PY{k+kt}{string}\PY{p}{,} \PY{k+kt}{string}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{l+s}{\PYZdq{}end\PYZdq{}}\PY{p}{,} \PY{n}{isoEnd}\PY{p}{)}\PY{p}{,}
+                \PY{k}{new} \PY{n}{KeyValuePair}\PY{p}{\PYZlt{}}\PY{k+kt}{string}\PY{p}{,} \PY{k+kt}{string}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{l+s}{\PYZdq{}granularity\PYZdq{}}\PY{p}{,} \PY{n}{granularity}\PY{p}{.}\PY{n}{ToString}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+
+            \PY{k}{return} \PY{k}{await} \PY{n}{SendServiceCall}\PY{p}{\PYZlt{}}\PY{n}{IList}\PY{p}{\PYZlt{}}\PY{n}{Candle}\PY{p}{\PYZgt{}}\PY{p}{\PYZgt{}}\PY{p}{(}\PY{n}{HttpMethod}\PY{p}{.}\PY{n}{Get}\PY{p}{,} \PY{err}{\PYZdl{}}\PY{l+s}{\PYZdq{}/products/\PYZob{}productId.GetEnumMemberValue()\PYZcb{}/candles\PYZdq{}} \PY{p}{+} \PY{n}{queryString}\PY{p}{)}\PY{p}{.}\PY{n}{ConfigureAwait}\PY{p}{(}\PY{k}{false}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{k}{private} \PY{n}{ProductsOrderBookResponse} \PY{n+nf}{ConvertProductOrderBookResponse}\PY{p}{(}
+            \PY{n}{ProductsOrderBookJsonResponse} \PY{n}{productsOrderBookJsonResponse}\PY{p}{,}
+            \PY{n}{ProductLevel} \PY{n}{productLevel}\PY{p}{)}
+        \PY{p}{\PYZob{}}
+            \PY{k+kt}{var} \PY{n}{askList} \PY{p}{=} \PY{n}{productsOrderBookJsonResponse}\PY{p}{.}\PY{n}{Asks}\PY{p}{.}\PY{n}{Select}\PY{p}{(}\PY{n}{product} \PY{p}{=}\PY{p}{\PYZgt{}} \PY{n}{product}\PY{p}{.}\PY{n}{ToArray}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{.}\PY{n}{Select}\PY{p}{(}\PY{n}{askArray} \PY{p}{=}\PY{p}{\PYZgt{}} \PY{k}{new} \PY{n}{Ask}\PY{p}{(}\PY{n}{Convert}\PY{p}{.}\PY{n}{ToDecimal}\PY{p}{(}\PY{n}{askArray}\PY{p}{[}\PY{l+m}{0}\PY{p}{]}\PY{p}{,} \PY{n}{CultureInfo}\PY{p}{.}\PY{n}{InvariantCulture}\PY{p}{)}\PY{p}{,} \PY{n}{Convert}\PY{p}{.}\PY{n}{ToDecimal}\PY{p}{(}\PY{n}{askArray}\PY{p}{[}\PY{l+m}{1}\PY{p}{]}\PY{p}{,} \PY{n}{CultureInfo}\PY{p}{.}\PY{n}{InvariantCulture}\PY{p}{)}\PY{p}{)}
+            \PY{p}{\PYZob{}}
+                \PY{n}{OrderId} \PY{p}{=} \PY{n}{productLevel} \PY{p}{=}\PY{p}{=} \PY{n}{ProductLevel}\PY{p}{.}\PY{n}{Three}
+                    \PY{p}{?} \PY{k}{new} \PY{n}{Guid}\PY{p}{(}\PY{n}{askArray}\PY{p}{[}\PY{l+m}{2}\PY{p}{]}\PY{p}{)}
+                    \PY{p}{:} \PY{p}{(}\PY{n}{Guid}\PY{p}{?}\PY{p}{)}\PY{k}{null}\PY{p}{,}
+                \PY{n}{NumberOfOrders} \PY{p}{=} \PY{n}{productLevel} \PY{p}{=}\PY{p}{=} \PY{n}{ProductLevel}\PY{p}{.}\PY{n}{Three}
+                    \PY{p}{?} \PY{p}{(}\PY{k+kt}{decimal?}\PY{p}{)}\PY{k}{null}
+                    \PY{p}{:} \PY{n}{Convert}\PY{p}{.}\PY{n}{ToDecimal}\PY{p}{(}\PY{n}{askArray}\PY{p}{[}\PY{l+m}{2}\PY{p}{]}\PY{p}{,} \PY{n}{CultureInfo}\PY{p}{.}\PY{n}{InvariantCulture}\PY{p}{)}
+            \PY{p}{\PYZcb{}}\PY{p}{)}\PY{p}{.}\PY{n}{ToArray}\PY{p}{(}\PY{p}{)}\PY{p}{;}
+
+            \PY{k+kt}{var} \PY{n}{bidList} \PY{p}{=} \PY{n}{productsOrderBookJsonResponse}\PY{p}{.}\PY{n}{Bids}\PY{p}{.}\PY{n}{Select}\PY{p}{(}\PY{n}{product} \PY{p}{=}\PY{p}{\PYZgt{}} \PY{n}{product}\PY{p}{.}\PY{n}{ToArray}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{.}\PY{n}{Select}\PY{p}{(}\PY{n}{bidArray} \PY{p}{=}\PY{p}{\PYZgt{}} \PY{k}{new} \PY{n}{Bid}\PY{p}{(}\PY{n}{Convert}\PY{p}{.}\PY{n}{ToDecimal}\PY{p}{(}\PY{n}{bidArray}\PY{p}{[}\PY{l+m}{0}\PY{p}{]}\PY{p}{,} \PY{n}{CultureInfo}\PY{p}{.}\PY{n}{InvariantCulture}\PY{p}{)}\PY{p}{,} \PY{n}{Convert}\PY{p}{.}\PY{n}{ToDecimal}\PY{p}{(}\PY{n}{bidArray}\PY{p}{[}\PY{l+m}{1}\PY{p}{]}\PY{p}{,} \PY{n}{CultureInfo}\PY{p}{.}\PY{n}{InvariantCulture}\PY{p}{)}\PY{p}{)}
+            \PY{p}{\PYZob{}}
+                \PY{n}{OrderId} \PY{p}{=} \PY{n}{productLevel} \PY{p}{=}\PY{p}{=} \PY{n}{ProductLevel}\PY{p}{.}\PY{n}{Three}
+                    \PY{p}{?} \PY{k}{new} \PY{n}{Guid}\PY{p}{(}\PY{n}{bidArray}\PY{p}{[}\PY{l+m}{2}\PY{p}{]}\PY{p}{)}
+                    \PY{p}{:} \PY{p}{(}\PY{n}{Guid}\PY{p}{?}\PY{p}{)}\PY{k}{null}\PY{p}{,}
+                \PY{n}{NumberOfOrders} \PY{p}{=} \PY{n}{productLevel} \PY{p}{=}\PY{p}{=} \PY{n}{ProductLevel}\PY{p}{.}\PY{n}{Three}
+                    \PY{p}{?} \PY{p}{(}\PY{k+kt}{decimal?}\PY{p}{)}\PY{k}{null}
+                    \PY{p}{:} \PY{n}{Convert}\PY{p}{.}\PY{n}{ToDecimal}\PY{p}{(}\PY{n}{bidArray}\PY{p}{[}\PY{l+m}{2}\PY{p}{]}\PY{p}{,} \PY{n}{CultureInfo}\PY{p}{.}\PY{n}{InvariantCulture}\PY{p}{)}
+            \PY{p}{\PYZcb{}}\PY{p}{)}\PY{p}{;}
+
+            \PY{k+kt}{var} \PY{n}{productOrderBookResponse} \PY{p}{=} \PY{k}{new} \PY{n}{ProductsOrderBookResponse}\PY{p}{(}\PY{n}{productsOrderBookJsonResponse}\PY{p}{.}\PY{n}{Sequence}\PY{p}{,} \PY{n}{bidList}\PY{p}{,} \PY{n}{askList}\PY{p}{)}\PY{p}{;}
+            \PY{k}{return} \PY{n}{productOrderBookResponse}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+    \PY{p}{\PYZcb{}}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}

@@ -1,5 +1,71 @@
 \chapter{Development}
 \section{Requirements elicitation}
+\subsection{API}
+\begin{itemize}
+    \item Display all stored exchanges and statistics
+    \item Display exchanges with a specific id
+    \item Display statistics with a specific id
+    \item Display the statistics starting at a specific date
+    \item Display the statistics ending at a specific date
+    \item Display the statistics with a specific start and end dates
+    \item Fetch all the statistics related to a specific exchange
+    \item Fetch the statistic related to a particular exchange with a specific id
+    \item Fetch all the statistics related to a specific exchange with a specific start date
+    \item Fetch all the statistics related to a specific exchange with a particular end date
+    \item Fetch a statistic related to a particular exchange with specific start and end dates
+\end{itemize}
+
+\subsection{Front-End}
+\begin{itemize}
+    \item Display for a particular exchange:
+    \begin{itemize}
+        \item Average fluctuation
+        \item Average time in growth
+        \item Average time in decline
+        \item Difference between highest and latest values
+    \end{itemize}
+    \item Allow display of information for a period of the last day, week, month and year.
+\end{itemize}
 \section{Design}
 \section{Implementation}
+Here is the code for the API:
+\subsection{Main Program}
+\captionsetup{type=figure}\captionof{figure}{Program.cs}
+\subfile{pyg/src/CryptoStats/Program}
+
+\captionsetup{type=figure}\captionof{figure}{Startup.cs}
+\subfile{pyg/src/CryptoStats/Startup}
+
+\captionsetup{type=figure}\captionof{figure}{appsettings.json}
+\subfile{pyg/src/CryptoStats/appsettings}
+
+\subsection{Models}
+\captionsetup{type=figure}\captionof{figure}{Exchange.cs}
+\subfile{pyg/src/CryptoStats/Models/Exchange}
+
+\captionsetup{type=figure}\captionof{figure}{Stat.cs}
+\subfile{pyg/src/CryptoStats/Models/Stat}
+
+\captionsetup{type=figure}\captionof{figure}{SeedData.cs}
+\subfile{pyg/src/CryptoStats/Models/SeedData}
+
+\captionsetup{type=figure}\captionof{figure}{DbContext.cs}
+\subfile{pyg/src/CryptoStats/Models/DbContext}
+
+\subsection{Controllers}
+\captionsetup{type=figure}\captionof{figure}{ExchangesController.cs}
+\subfile{pyg/src/CryptoStats/Controllers/ExchangesController}
+
+\captionsetup{type=figure}\captionof{figure}{ExchangeStatsController.cs}
+\subfile{pyg/src/CryptoStats/Controllers/ExchangeStatsController}
+
+\captionsetup{type=figure}\captionof{figure}{StatsController.cs}
+\subfile{pyg/src/CryptoStats/Controllers/StatsController}
+
+\subsection{GDAX Client}
+\captionsetup{type=figure}\captionof{figure}{GDAXClient.cs}
+\subfile{pyg/src/CryptoStats/GDAX/GDAXClient}
+
+\captionsetup{type=figure}\captionof{figure}{ProductsService.cs}
+\subfile{pyg/src/CryptoStats/GDAX/Services/Products/ProductsService}
 \section{Testing}

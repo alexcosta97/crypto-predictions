@@ -13,6 +13,7 @@
     {
       "name": "Build LaTeX",
       "tools": [
+        "tectonic",
         "tectonic"
       ]
     }
