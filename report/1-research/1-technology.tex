@@ -1,1 +1,212 @@
 \chapter{Technology - Wider Context}
+\section{Considerations on the challenges when building distributed systems}
+    When creating distributing systems, different challenges had to be overcome
+    by developers in other to develop such systems:
+    \begin{itemize}
+        \item Inherent complexities: Inter-node communication needs different mechanisms
+        than intra-node communication, as well as policies and protocols. Synchronization
+        and coordination is more complicated, and problems such as latency, jitter,
+        transient failures and overload are also problems to consider.
+        \item Accidental complexities: Those happen because of limitations with
+        software tools and development techniques. Most of these happen because
+        of choices made when the time arose to build the system.
+        \item Inadequate methods and techniques: For a long time, software development
+        studies and practices have focused on single-process and single-threaded applications,
+        which has lead to a lack of expertise on software techniques distributed systems.
+        \item Continuous re-invention and re-discovery of core concepts and techniques:
+        For a long time, time has been used on solving the same problems over and over
+        again, instead of trying to develop techniques that would facilitate the reuse of
+        code across different platforms, which lead to less time being available to invest in
+        innovation.
+    \end{itemize}
+
+    \section{Different Distributed Computing technologies}
+    \subsection{Ad hoc Network Programming}
+    Ad hoc network programming was one of the first solutions to allow the development
+    of distributed computing systems. That technology used Interprocess Communication mechanisms.
+    In IPC, there was a use of shared memory, pipes and sockets, which lead to a big coupling between
+    the application code and the socket API, as well as paradigms mismatches, since local communication
+    techniques use object-oriented techniques and remote communications use function-oriented techniques.
+
+    \subsection{Structured communication}
+    This technology was an improvement to ad hoc since it doesn't couple application code
+    to low-level IPC mechanisms, offers higher-level communication to distributed systems,
+    encapsulates machine-level details and embodies types and communication style closer
+    to the application domain. One particular example of this technology are Remote
+    Procedure Call platforms. They have the following characteristics:
+
+    \begin{itemize}
+        \item Allow distributed applications to cooperate with one another by:
+        \begin{itemize}
+            \item Invoking functions on each other
+            \item Passing parameters along with each invocation
+            \item Receiving results from the function that was invocated
+        \end{itemize}
+    \end{itemize}
+
+    With this technique, however, components are still aware of their peers' remoteness, therefore
+    it does not fulfil the following distributed systems requirements:
+    \begin{itemize}
+        \item Location-independence of components
+        \item Flexible component deployment
+    \end{itemize}
+
+    \subsection{Middleware}
+    Middleware is used as a bridge between the remote system and the application, being a distribution infrastructure
+    software. It resides between an application and the operating system, network or database. Different types of
+    middleware have appeared over time, which are listed below.
+
+    \subsubsection{Distributed Object Computing}
+    Also known as DOC, it represents the confluence of two major information technologies:
+    RPC-based distributed computing systems and object-oriented design and programming.
+
+    COBRA 2.x and Java RMI are examples of DOC. They focus on interfaces, which are contracts between clients and
+    servers that define a location-independent means for clients to view and access object services provided by a
+    server. Such technologies also define communication protocols and object information models to enable
+    interoperability.
+
+    Their key limitations are:
+    \begin{itemize}
+        \item Lack of functional boundaries: This type of middleware treats all interfaces as client/server
+        contracts and don't provide standard assembly mechanisms to decouple dependencies among collaborating
+        object implementations. This leads to a requirement for the explicit discovery and connection to objects
+        that are only dependencies for the actual object that the application is trying to reach.
+        \item Lack of software deployment and configuration standards: Results in systems that are harder to
+        maintain and software component implementations that are much harder to reuse.
+    \end{itemize}
+
+    \subsubsection{Component middleware}
+    This technology emerged to address the following limitations of DOC:
+    \begin{itemize}
+        \item Lack of functional boundaries: Allows a group of cohesive component objects to
+        interact with each other through multiple provided and required interfaces and defines standard
+        runtime mechanisms needed to execute these component objects in generic application servers.
+        \item Lack of standard deployment and configuration mechanisms: Component middleware specifies the
+        infrastructure to packages, which makes it easier to customize, assemble and disseminate components
+        throughout a distributed system.
+    \end{itemize}
+
+    Examples of this technology are Enterprise JavaBeans and COBRA Component Model.
+
+    For this technology, a set of rules and definitions has been applied:
+    \begin{itemize}
+        \item Component is an implementation entity that exposes a set of named interfaces and connection points
+        that components use to communicate with each other.
+        \item Containers provide the server runtime environment for component implementations. Contains various
+        pre-defined hooks and operations that give components access to strategies and services, such as persistence,
+        event notification, transaction, replication, load balancing and security. Each container is also responsible
+        for initializing and providing runtime contexts for the managed components.
+    \end{itemize}
+
+    Component middleware also automates aspects of various stages in the application development lifecycle like
+    component implementation, packaging, assembly and deployment. This approach enables developers
+    to create applications more rapidly and robustly than DOC.
+
+    \subsubsection{Publish/Subscribe and Message-Oriented Services}
+    RPC, DOC and component middleware are all based on request/response communication. Aspects of this type
+    of communication are:
+    \begin{itemize}
+        \item Synchonous communication: The client waits for a response and stops the rest
+        of its process
+        \item Designated communication: The client must know the identity
+        of the server, which leads to tight coupling between the application code and the API
+        \item Point-to-Point communication: Client talks to just one server at a time
+    \end{itemize}
+
+    In order to fix the problems that that type of communication created for some systems,
+    the following alternatives were created:
+    \begin{itemize}
+        \item Message-Oriented Middleware: Applied in technologies such as IBM MQ Series, BEA
+        MessageQ and TIBCO Rendezvous
+        \item Publish/Subscribe middleware: Applied in technologies such as Java Messaging Service
+        (JMS), Data Distribution Service (DDS) and WS-NOTIFICATION
+    \end{itemize}
+
+    Specifications of Message-Oriented:
+    \begin{itemize}
+        \item Support for asynchronous communication
+        \item Transactional properties
+    \end{itemize}
+
+    On top of that, Publish/Subscribe also allows:
+    \begin{itemize}
+        \item Anonymous communication (loose coupling)
+        \item Group communication
+    \end{itemize}
+
+    On the Publish/Subscribe paradigm:
+    \begin{itemize}
+        \item Publishers are the source of events. The may need to describe the type
+        of event they generate sometimes
+        \item Subscribers are the event sinks; they consume data on topics of interest to them.
+        They may need to declare filtering information sometimes
+        \item Event channels: Components in the system that propagate events. They can perform
+        services such as filtering and routing, Quality of Service enforcement and fault management.
+    \end{itemize}
+
+    In these types of systems, events can be represented in many ways, and the interfaces can also be
+    generic or specialized.
+
+    \subsubsection{Service-Oriented Architectures and Web Services}
+    Service-Oriented Architecture (SOA) is a style of organizing and utilizing distributed capabilities
+    that may be controlled by different organizations and owners. It provides a uniform means to offer,
+    discover, interact with and use capabilities of loosely coupled and interoperable software services
+    to support the requirements of the business processes and application users.
+
+    From the emergence of this technology along with the increasing popularity of the World Wide Web, SOAP
+    was created. It is a protocol to exchange XML-based messages over a network, normally using HTTP. SOAP
+    spawned a popular new variant of SOA called Web Services. It allows developers to package application
+    logic into services whose interfaces are described with the Web Service Description Language (WSDL).
+    WSDL-based services are often accessed using higher-level Internet protocols. They can also be used
+    to build an Enterprise Service Bus(ESB), which is a distributed computing architecture that simplifies
+    interworking between disparate systems.
+
+    Web services have established themselves as the technology of choice for most enterprise business
+    applications. They complement earlier successful middleware technologies and provide standard mechanisms
+    for interoperability. Examples of Web Services technologies are:
+    \begin{itemize}
+        \item Microsoft Windows Component Foundation (WCF)
+        \item Service Component Architecture (SCA)
+    \end{itemize}
+
+    Web Services combine aspects of component-based development and Web technologies. They also provide black-box
+    functionality that can be described and reused without concern for how a service is implemented. They are not
+    accessed using the object model-specific protocols, but rather using Web protocols and data formats.
+
+    Web service technologies focus on middleware integration & allow component reuse across an organization's
+    entire application set, regardless of the technology implemented for those. In general, web services make it
+    relatively easy to reuse and share common logic with such diverse clients as mobile, desktop and web
+    applications. The broad reach of web services is possible because they rely on open standards that are
+    ubiquitous, interoperable across different computing platforms and independent of the underlying execution
+    technologies.
+
+    All web services use HTTP and leverage data-interchange standards like XML and JSON, as well as common media
+    types, but differ on the way they may use HTTP:
+    \begin{itemize}
+        \item As an application protocol to define standard service behaviours
+        \item HTTP as a transport mechanism to convey data
+    \end{itemize}
+
+    In Web services, there are two prominent design models:
+    \begin{itemize}
+        \item SOAP
+        \begin{itemize}
+            \item Language, platform and transport independent
+            \item Works well in distributed enterprise environments
+            \item Provides significant pre-build extensibility in the
+            form of WS* standards
+            \item Built-in error handling
+            \item XML message-format only
+            \item Automation when used with certain language products
+            \item Uses WSDL as a description language
+        \end{itemize}
+        \item REST
+        \begin{itemize}
+            \item Uses easy to understand standards like swagger and OpenAPI
+            Specification 3.0
+            \item Can use different types of message formatting like JSON
+            \item Fast (no extensive processing required)
+            \item Close to other Web technologies in design philosophy
+            \item Uses WADL as a description language
+        \end{itemize}
+    \end{itemize}
